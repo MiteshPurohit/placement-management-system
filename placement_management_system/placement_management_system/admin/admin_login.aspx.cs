@@ -21,6 +21,7 @@ namespace placement_management_system
             var password = xdoc.Element("admin").Element("password").Value;
             if ((String)username == admin_username.Text.ToString() && (String)password == pass.Text.ToString())
             {
+                Session["admin_id"] = "admin";
                 Response.Redirect("admin_home.aspx");
             }
             Console.Write(username + " " + password);

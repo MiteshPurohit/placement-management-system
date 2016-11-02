@@ -17,7 +17,7 @@ namespace placement_management_system
         protected void login_btn_click(object sender, EventArgs e)
         {
             SqlConnection con = new SqlConnection();
-            con.ConnectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename='C:\Users\Sanket Bhimani\AppData\Local\Microsoft\Microsoft SQL Server Local DB\Instances\v11.0\pmsdb.mdf';Integrated Security=True;Connect Timeout=30";
+            con.ConnectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename='C:\Users\Sanket Bhimani\Source\Repos\placement-management-system\placement_management_system\placement_management_system\db\pmsdb.mdf';Integrated Security=True;Connect Timeout=30";
             con.Open();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
