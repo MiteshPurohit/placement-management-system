@@ -2,4 +2,5 @@
 <admin>
   <username>admin</username>
   <password>admin</password>
+  <company_reg_pass>admin</company_reg_pass>
 </admin>

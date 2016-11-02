@@ -70,9 +70,11 @@
     <Content Include="admin\admin.xml" />
     <Content Include="company\company_home.aspx" />
     <Content Include="company\company_login.aspx" />
-    <Content Include="student\student_add_details.html" />
+    <Content Include="company\ragister_company.aspx" />
+    <Content Include="student\student_add_details.aspx" />
     <Content Include="student\student_home.aspx" />
     <Content Include="student\student_login.aspx" />
+    <Content Include="student\student_logout.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -104,7 +106,21 @@
     <Compile Include="company\company_login.aspx.designer.cs">
       <DependentUpon>company_login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="company\ragister_company.aspx.cs">
+      <DependentUpon>ragister_company.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="company\ragister_company.aspx.designer.cs">
+      <DependentUpon>ragister_company.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="student\student_add_details.aspx.cs">
+      <DependentUpon>student_add_details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="student\student_add_details.aspx.designer.cs">
+      <DependentUpon>student_add_details.aspx</DependentUpon>
+    </Compile>
     <Compile Include="student\student_home.aspx.cs">
       <DependentUpon>student_home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -118,6 +134,13 @@
     </Compile>
     <Compile Include="student\student_login.aspx.designer.cs">
       <DependentUpon>student_login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="student\student_logout.aspx.cs">
+      <DependentUpon>student_logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="student\student_logout.aspx.designer.cs">
+      <DependentUpon>student_logout.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <PropertyGroup>

@@ -36,18 +36,25 @@
                         <asp:textbox runat="server" id="company_id" class="validate"/>
                         <label for="first_name">Company ID</label>
                     </div>
+                    </div>
+                     <div class="row">
                     <div class="input-field col s12">
                         <asp:textbox runat="server" id="pass" Textmode="Password" class="validate"/>
                         <label for="first_name">Password</label>
                     </div>
-                     <div class="input-field col s12">
-                    <asp:button runat="server" ID="login_btn" class="btn waves-effect waves-light col s12" text="Login" OnClick="login_btn_click"/>
+                         </div>
+
+                    
+                      <div class="input-field col s12">
+                    <asp:button runat="server" ID="login_btn" class="btn waves-effect waves-light" text="Login" OnClick="login_btn_click"/>
 
                      </div>
-                </div>
+                    
+             
             </form>
                 </div>
-        </div>
+       
     </div>
+        </div>
 </body>
 </html>

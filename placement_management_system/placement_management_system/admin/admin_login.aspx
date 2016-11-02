@@ -42,7 +42,7 @@
                         <label for="first_name">Password</label>
                     </div>
                      <div class="input-field col s12">
-                    <asp:button runat="server" ID="login_btn" class="btn waves-effect waves-light col s12" text="Login" OnClick="login_btn_click"/>
+                    <asp:button runat="server" ID="login_btn" class="btn waves-effect waves-light" text="Login" OnClick="login_btn_click"/>
 
                      </div>
                 </div>
