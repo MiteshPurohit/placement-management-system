@@ -65,16 +65,58 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="student_login.aspx" />
+    <Content Include="admin\admin_home.aspx" />
+    <Content Include="admin\admin_login.aspx" />
+    <Content Include="admin\admin.xml" />
+    <Content Include="company\company_home.aspx" />
+    <Content Include="company\company_login.aspx" />
+    <Content Include="student\student_add_details.html" />
+    <Content Include="student\student_home.aspx" />
+    <Content Include="student\student_login.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="admin\admin_home.aspx.cs">
+      <DependentUpon>admin_home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\admin_home.aspx.designer.cs">
+      <DependentUpon>admin_home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\admin_login.aspx.cs">
+      <DependentUpon>admin_login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\admin_login.aspx.designer.cs">
+      <DependentUpon>admin_login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="company\company_home.aspx.cs">
+      <DependentUpon>company_home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="company\company_home.aspx.designer.cs">
+      <DependentUpon>company_home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="company\company_login.aspx.cs">
+      <DependentUpon>company_login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="company\company_login.aspx.designer.cs">
+      <DependentUpon>company_login.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="student_login.aspx.cs">
+    <Compile Include="student\student_home.aspx.cs">
+      <DependentUpon>student_home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="student\student_home.aspx.designer.cs">
+      <DependentUpon>student_home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="student\student_login.aspx.cs">
       <DependentUpon>student_login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="student_login.aspx.designer.cs">
+    <Compile Include="student\student_login.aspx.designer.cs">
       <DependentUpon>student_login.aspx</DependentUpon>
     </Compile>
   </ItemGroup>

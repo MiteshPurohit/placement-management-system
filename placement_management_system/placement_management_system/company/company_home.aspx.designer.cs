@@ -11,7 +11,7 @@ namespace placement_management_system
 {
 
 
-    public partial class student_login
+    public partial class company_home
     {
 
         /// <summary>

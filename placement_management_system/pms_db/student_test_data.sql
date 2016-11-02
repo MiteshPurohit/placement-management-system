@@ -2,7 +2,7 @@
 	id int not null IDENTITY,
 	mcq_choice varchar(1),
 	descriptive_ans text,
-	ture_false boolean,
+	ture_false bit,
 	question_id int,
 	student_id int,
 	primary key(id),
