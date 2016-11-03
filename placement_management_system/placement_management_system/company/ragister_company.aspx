@@ -29,7 +29,7 @@
 
     </nav>
     <div style="position:absolute; width:100%; padding: 10%;">
-        <h3 class="center">Company Ragistration</h3>
+        <h3 class="center">Company Registration</h3>
         <div class="row">
             <div class="col s12">
                 <asp:Label ID="error" runat="server" Text=""></asp:Label>

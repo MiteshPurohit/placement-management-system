@@ -71,10 +71,14 @@
     <Content Include="company\company_home.aspx" />
     <Content Include="company\company_login.aspx" />
     <Content Include="company\ragister_company.aspx" />
+    <Content Include="student\select_company.aspx" />
     <Content Include="student\student_add_details.aspx" />
     <Content Include="student\student_home.aspx" />
     <Content Include="student\student_login.aspx" />
     <Content Include="student\student_logout.aspx" />
+    <Content Include="student\view_company.aspx" />
+    <Content Include="student\view_company_details.aspx" />
+    <Content Include="student\_select_company.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -114,6 +118,13 @@
       <DependentUpon>ragister_company.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="student\select_company.aspx.cs">
+      <DependentUpon>select_company.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="student\select_company.aspx.designer.cs">
+      <DependentUpon>select_company.aspx</DependentUpon>
+    </Compile>
     <Compile Include="student\student_add_details.aspx.cs">
       <DependentUpon>student_add_details.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -141,6 +152,27 @@
     </Compile>
     <Compile Include="student\student_logout.aspx.designer.cs">
       <DependentUpon>student_logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="student\view_company.aspx.cs">
+      <DependentUpon>view_company.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="student\view_company.aspx.designer.cs">
+      <DependentUpon>view_company.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="student\view_company_details.aspx.cs">
+      <DependentUpon>view_company_details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="student\view_company_details.aspx.designer.cs">
+      <DependentUpon>view_company_details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="student\_select_company.aspx.cs">
+      <DependentUpon>_select_company.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="student\_select_company.aspx.designer.cs">
+      <DependentUpon>_select_company.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <PropertyGroup>

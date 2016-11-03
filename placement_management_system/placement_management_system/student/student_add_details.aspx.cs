@@ -26,9 +26,14 @@ namespace placement_management_system.student
             branch.SelectedValue = reader["branch"].ToString();
             cpi.Text = reader["cpi"].ToString();
             birthdate.Text = reader["dob"].ToString();
+            skills.Text = reader["skills"].ToString();
+            email.Text = reader["email_id"].ToString();
+            achievement.Text = reader["achievement"].ToString();
+            mobileno.Text = reader["mobile_no"].ToString();
             fname.Enabled = false;
             branch.Enabled = false;
             cpi.Enabled = false;
+            con.Close();
         }
 
         protected void submit_Click(object sender, EventArgs e)

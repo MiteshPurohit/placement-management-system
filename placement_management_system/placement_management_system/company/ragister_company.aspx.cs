@@ -22,48 +22,7 @@ namespace placement_management_system.company
             }
 
         }
-        protected void ragister_btn_click(object sender, EventArgs e)
-        {
-            String selected_branches = "snk";
-            List<string> brnchs = branches.Items.Cast<ListItem>().Where(li => li.Selected).Select(li => li.Value).ToList();
-            foreach (var item in brnchs)
-            {
-                selected_branches += "," + item;
-            }
-            String _name = cname.Value;
-            String _description = description.Value;
-            String _job_post = job_post.Value;
-            String _job_salary = job_salary.Value;
-            String _job_location = job_location.Value;
-            String _other_details = other_details.Value;
-            String _email = email.Value;
-            String _phone = phone.Value;
-            String _min_cpi = min_cpi.Value;
-            String _password = password.Value;
-            String _cpassword = cpassword.Value;
-            //String _key = key.Value;
-            //if (_key=="SNK.bhimani3" && _password == _cpassword)
-            if (_password == _cpassword)
-            {
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename='C:\Users\Sanket Bhimani\Source\Repos\placement-management-system\placement_management_system\placement_management_system\db\pmsdb.mdf';Integrated Security=True;Connect Timeout=30";
-                con.Open();
-                SqlCommand cmd = new SqlCommand();
-                cmd.Connection = con;
-                cmd.CommandText = "INSERT INTO company_table (company_name, description, other_details, required_min_cpi, job_post, job_location, tentative_salary, email, phone, password) values ('"+_name+"','"+_description+"','"+_other_details+"','"+_min_cpi+"','"+_job_post+"','"+_job_location+"','"+_job_salary+"','"+_email+"','"+_phone+"','"+_password+"')";
-                cmd.ExecuteNonQuery();
-                con.Close();
-                company_id.Text = _email;
-                company_password.Text = _password;
-                reg_form.Visible = false;
-                after_reg.Visible = true;
-            }
-            else
-            {
-                error.Text = "Error";
-            }
-
-        }
+        
         protected void go_btn_click(object sender, EventArgs e)
         {
             XDocument xdoc = XDocument.Load(Server.MapPath("~/admin/admin.xml"));
@@ -78,7 +37,7 @@ namespace placement_management_system.company
 
         protected void reg_btn_Click(object sender, EventArgs e)
         {
-            String selected_branches = "snk";
+            String selected_branches = "";
             List<string> brnchs = branches.Items.Cast<ListItem>().Where(li => li.Selected).Select(li => li.Value).ToList();
             foreach (var item in brnchs)
             {
@@ -99,7 +58,7 @@ namespace placement_management_system.company
             if (_password == _cpassword)
             {
                 SqlConnection con = new SqlConnection();
-                con.ConnectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename='C:\Users\Sanket Bhimani\AppData\Local\Microsoft\Microsoft SQL Server Local DB\Instances\v11.0\pmsdb.mdf';Integrated Security=True;Connect Timeout=30";
+                con.ConnectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename='C:\Users\Sanket Bhimani\Source\Repos\placement-management-system\placement_management_system\placement_management_system\db\pmsdb.mdf';Integrated Security=True;Connect Timeout=30";
                 con.Open();
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = con;
