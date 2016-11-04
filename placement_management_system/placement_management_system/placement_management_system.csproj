@@ -68,9 +68,11 @@
     <Content Include="admin\admin_home.aspx" />
     <Content Include="admin\admin_login.aspx" />
     <Content Include="admin\admin.xml" />
+    <Content Include="company\add_question.aspx" />
     <Content Include="company\company_home.aspx" />
     <Content Include="company\company_login.aspx" />
     <Content Include="company\ragister_company.aspx" />
+    <Content Include="company\view_question.aspx" />
     <Content Include="student\select_company.aspx" />
     <Content Include="student\student_add_details.aspx" />
     <Content Include="student\student_home.aspx" />
@@ -96,6 +98,13 @@
     <Compile Include="admin\admin_login.aspx.designer.cs">
       <DependentUpon>admin_login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="company\add_question.aspx.cs">
+      <DependentUpon>add_question.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="company\add_question.aspx.designer.cs">
+      <DependentUpon>add_question.aspx</DependentUpon>
+    </Compile>
     <Compile Include="company\company_home.aspx.cs">
       <DependentUpon>company_home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -116,6 +125,13 @@
     </Compile>
     <Compile Include="company\ragister_company.aspx.designer.cs">
       <DependentUpon>ragister_company.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="company\view_question.aspx.cs">
+      <DependentUpon>view_question.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="company\view_question.aspx.designer.cs">
+      <DependentUpon>view_question.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="student\select_company.aspx.cs">

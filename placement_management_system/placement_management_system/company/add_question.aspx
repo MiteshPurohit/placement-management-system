@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="company_home.aspx.cs" Inherits="placement_management_system.company_home" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="add_question.aspx.cs" Inherits="placement_management_system.company.add_question" %>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 
@@ -11,7 +11,8 @@
         <title></title>
     </head>
 <body>
-   
+   <div id="alert" runat="server"></div>
+    
     <nav style="position:fixed; z-index:1000;" class="red lighten-1">
         <div class="nav-wrapper row">
 
@@ -46,11 +47,68 @@
         </div>
          <div class="container" style=" margin-top:1%; margin-left:9%; width:90%; max-width:600px;">
              <form runat="server">
-       <ul class="collapsible popout" data-collapsible="accordion"  id="companies" runat="server">
-        
-        
-        
-      </ul>
+       
+                 <div class="row">
+        <div class="input-field col s12">
+          <textarea id="question" runat="server" class="materialize-textarea"></textarea>
+          <label for="question">Question defination</label>
+        </div>
+                     </div>
+                     <div class="row">
+        <div class="input-field col s12">
+          <input id="opta" type="text" runat="server" class="validate">
+          <label for="opta">Option A</label>
+        </div>
+      </div>
+                     <div class="row">
+        <div class="input-field col s12">
+          <input id="optb" type="text" runat="server" class="validate">
+          <label for="optb">Option B</label>
+        </div>
+      </div>
+                     <div class="row">
+        <div class="input-field col s12">
+          <input id="optc" type="text" runat="server" class="validate">
+          <label for="optc">Option C</label>
+        </div>
+      </div>
+                     <div class="row">
+        <div class="input-field col s12">
+          <input id="optd" type="text" runat="server" class="validate">
+          <label for="optd">Option D</label>
+        </div>
+      </div>
+                     <div class="row">
+<div class="input-field col s12">
+    <select  runat="server" id="ans">
+      <option value="" disabled selected>Select Answer</option>
+      <option value="1">Option A</option>
+      <option value="2">Option B</option>
+      <option value="3">Option C</option>
+        <option value="4">Option D</option>
+    </select>
+    <label>Answer</label>
+    <script>
+        $(document).ready(function () {
+            $('select').material_select();
+        });
+
+    </script>
+  </div>
+                         </div>
+
+                      <div class="row">
+        <div class="input-field col s12">
+          <input id="weight" type="number" runat="server" value="1" class="validate">
+          <label for="weight">Weight of question</label>
+        </div>
+      </div>
+
+                     <div class="row">
+        <div class="input-field col s12">
+            <asp:Button ID="submit" runat="server" class="waves-effect waves-light btn" Text="Add" OnClick="submit_Click" />
+        </div>
+      </div>
              </form> 
 </div>
             
