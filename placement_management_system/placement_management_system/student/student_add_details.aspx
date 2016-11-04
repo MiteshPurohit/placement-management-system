@@ -1,20 +1,20 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="student_add_details.aspx.cs" Inherits="placement_management_system.student.student_add_details" %>
 <html xmlns="http://www.w3.org/1999/xhtml">
 
-    <head runat="server">
-      <!--<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />-->
-        <link type="text/css" rel="stylesheet" href="../materialize/css/materialize.min.css" media="screen,projection" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <script type="text/javascript" src="../materialize/jquery-2.1.1.min.js"></script>
-        <script type="text/javascript" src="../materialize/js/materialize.min.js"></script>
-        <title></title>
-    </head>
+<head runat="server">
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link type="text/css" rel="stylesheet" href="../materialize/css/materialize.min.css" media="screen,projection" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="text/javascript" src="../materialize/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="../materialize/js/materialize.min.js"></script>
+    <title></title>
+</head>
 <body>
-    <nav style="position:fixed; z-index:1000;" class="red lighten-1">
+    <nav style="position: fixed; z-index: 1000;" class="red lighten-1">
         <div class="nav-wrapper row">
 
-            <span style="margin-left:3%; font-size:2em;" class="col s3">Placement Cell</span>
-            <span style="align-self:center; font-size: 1.5em;" class="col s6">
+            <span style="margin-left: 3%; font-size: 2em;" class="col s3">Placement Cell</span>
+            <span style="align-self: center; font-size: 1.5em;" class="col s6">
                 <center>
                     Hello, <asp:Label ID="name" runat="server" Text=""></asp:Label>
                 </center>
@@ -26,28 +26,28 @@
         </div>
 
     </nav>
-    <ul id="nav-mobile" class="side-nav fixed" style="height:100%; width:24%; transform: translateX(0px); border-right:solid thin #e0e0e0; transform: translateX(0px); margin:0px 0px 0px 0px; padding-top:5.35%;">
-        <li class="bold"><a href="#" style="padding-left:48px;" class="waves-effect waves-teal">Deshboard</a></li>
-        <li class="bold"><a href="#" style="padding-left:48px;" class="waves-effect waves-teal">Written test</a></li>
-        <li class="bold active"><a href="student_add_details.aspx" style="padding-left:48px;" class="waves-effect waves-teal">View & edit details</a></li>
-        <li class="bold"><a href="view_company.aspx" style="padding-left:48px;" class="waves-effect waves-teal">View companies</a></li>
-        <li class="bold"><a href="select_company.aspx" style="padding-left:48px;" class="waves-effect waves-teal">Select intrested companies</a></li>
-        <li class="bold"><a href="#" style="padding-left:48px;" class="waves-effect waves-teal">View test result</a></li>
-        <li class="bold"><a href="student_logout.aspx" style="padding-left:48px;" class="waves-effect waves-teal">Logout</a></li>
+    <ul id="nav-mobile" class="side-nav fixed" style="height: 100%; width: 24%; transform: translateX(0px); border-right: solid thin #e0e0e0; transform: translateX(0px); margin: 0px 0px 0px 0px; padding-top: 5.35%;">
+        <li class="bold"><a href="#" style="padding-left: 48px;" class="waves-effect waves-teal">Deshboard</a></li>
+        <li class="bold"><a href="#" style="padding-left: 48px;" class="waves-effect waves-teal">Written test</a></li>
+        <li class="bold active"><a href="student_add_details.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">View & edit details</a></li>
+        <li class="bold"><a href="view_company.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">View companies</a></li>
+        <li class="bold"><a href="select_company.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">Select intrested companies</a></li>
+        <li class="bold"><a href="#" style="padding-left: 48px;" class="waves-effect waves-teal">View test result</a></li>
+        <li class="bold"><a href="student_logout.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">Logout</a></li>
     </ul>
 
-   
-     <div style="margin-top:6%; width:100%; padding: 0px; position:absolute; padding-left:24%;">
-        <div class="grey lighten-4" style="width:100%; padding-top:4px; padding-bottom:6px;">
+
+    <div style="margin-top: 6%; width: 100%; padding: 0px; position: absolute; padding-left: 24%;">
+        <div class="grey lighten-4" style="width: 100%; padding-top: 4px; padding-bottom: 6px;">
             <h4 class="center-align">Fill Your Complete Details</h4>
         </div>
         <div class="row">
 
- <div class="grey lighten-4 col s6" style=" margin-top:1%; margin-left:9%; width:90%; max-width:600px; padding-top:1%;">
-                <form id="form" runat="server"  enctype="multipart/form-data">
+            <div class="grey lighten-4 col s6" style="margin-top: 1%; margin-left: 9%; width: 90%; max-width: 600px; padding-top: 1%;">
+                <form id="form" runat="server" enctype="multipart/form-data">
                     <div class="row">
                         <div class="input-field col s12">
-                            <asp:TextBox  ID="fname" name="fname" class="validate" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="fname" name="fname" class="validate" runat="server"></asp:TextBox>
                             <label for="fname">Full Name</label>
                         </div>
 
@@ -55,7 +55,7 @@
 
                     <div class="row">
                         <div class="input-field col s12">
-                            <asp:DropDownList  ID="branch" name="branch" AppendDataBoundItems="true" runat="server">
+                            <asp:DropDownList ID="branch" name="branch" AppendDataBoundItems="true" runat="server">
                                 <asp:ListItem Text="Computer Engineering" Value="CE" />
                                 <asp:ListItem Text="Civil Engineering" Value="CL" />
                                 <asp:ListItem Text="Chemical Engineering" Value="CH" />
@@ -64,17 +64,7 @@
                                 <asp:ListItem Text="Information Technolog" Value="IT" />
                                 <asp:ListItem Text="Electronics & Communication" Value="EC" />
                             </asp:DropDownList>
-                           <!-- <select id="branch" name="branch">
-                                <option value="" disabled selected>Select your branch</option>
-                                <option value="CE">CE</option>
-                                <option value="CH">CH</option>
-                                <option value="EC">EC</option>
-                                <option value="MH">MH</option>
-                                <option value="CL">CL</option>
-                                <option value="IT">IT</option>
-                                <option value="IC">IC</option>
-                            </select>
-                            -->
+                           
                             <label for="branch">Your Branch</label>
                         </div>
                         <script>
@@ -85,14 +75,14 @@
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
-                            <asp:TextBox  ID="cpi" name="cpi" class="validate" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="cpi" name="cpi" class="validate" runat="server"></asp:TextBox>
                             <label for="cpi">CPI</label>
                         </div>
                     </div>
                     <div class="row">
 
                         <div class="col s12">
-                            <asp:TextBox  ID="birthdate" type="date" TextMode="Date" name="dob" class="datepicker" placeholder="Birthdate" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="birthdate" type="date" TextMode="Date" name="dob" class="datepicker" placeholder="Birthdate" runat="server"></asp:TextBox>
                             <script>
                                 $('.datepicker').pickadate({
                                     selectMonths: true, // Creates a dropdown to control month
@@ -106,19 +96,19 @@
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
-                            <asp:TextBox  ID="email" name="email" class="validate" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="email" name="email" class="validate" runat="server"></asp:TextBox>
                             <label for="email">E-mail</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
-                            <asp:TextBox  ID="mobileno" name="mobileno" class="validate" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="mobileno" name="mobileno" class="validate" runat="server"></asp:TextBox>
                             <label for="mobileno">Mobile No.</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
-                            <asp:TextBox  ID="achievement" name="achievement"  class="materialize-textarea" TextMode="MultiLine" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="achievement" name="achievement" class="materialize-textarea" TextMode="MultiLine" runat="server"></asp:TextBox>
                             <label for="achievement">Achievement & Projects</label>
                         </div>
                     </div>
@@ -139,7 +129,7 @@
 
                     <div class="row">
                         <div class="input-field col s12">
-                            <asp:TextBox  ID="skills" name="skills"  class="materialize-textarea" TextMode="MultiLine" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="skills" name="skills" class="materialize-textarea" TextMode="MultiLine" runat="server"></asp:TextBox>
                             <label for="skills">skills and fields of interest</label>
                         </div>
                     </div>
@@ -156,5 +146,5 @@
         </div>
     </div>
 
- </body>
+</body>
 </html>

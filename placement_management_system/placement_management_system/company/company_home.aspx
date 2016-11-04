@@ -2,21 +2,21 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 
-    <head runat="server">
-      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-         <link href="../materialize/css/ghpages-materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-       <script type="text/javascript" src="../materialize/jquery-2.1.1.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
-        <title></title>
-    </head>
+<head runat="server">
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link href="../materialize/css/ghpages-materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="text/javascript" src="../materialize/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
+    <title></title>
+</head>
 <body>
-   
-    <nav style="position:fixed; z-index:1000;" class="red lighten-1">
+
+    <nav style="position: fixed; z-index: 1000;" class="red lighten-1">
         <div class="nav-wrapper row">
 
-            <span style="margin-left:3%; font-size:2em;" class="col s3">Placement Cell</span>
-            <span style="align-self:center; font-size: 1.5em;" class="col s6">
+            <span style="margin-left: 3%; font-size: 2em;" class="col s3">Placement Cell</span>
+            <span style="align-self: center; font-size: 1.5em;" class="col s6">
                 <center>
                     Hello, <asp:Label ID="name" runat="server" Text=""></asp:Label>
                 </center>
@@ -28,32 +28,29 @@
         </div>
 
     </nav>
-     <ul id="nav-mobile" class="side-nav fixed" style="height:100%; width:24%; transform: translateX(0px); border-right:solid thin #e0e0e0; transform: translateX(0px); margin:0px 0px 0px 0px; padding-top:5.35%;">
-        <li class="bold"><a href="#" style="padding-left:48px;" class="waves-effect waves-teal">Deshboard</a></li>
-        <li class="bold"><a href="add_question.aspx" style="padding-left:48px;" class="waves-effect waves-teal">Add Question</a></li>
-         <li class="bold"><a href="view_question.aspx" style="padding-left:48px;" class="waves-effect waves-teal">View & Edit Question</a></li>
-        <li class="bold"><a href="student_add_details.aspx" style="padding-left:48px;" class="waves-effect waves-teal">View & edit details</a></li>
-        <li class="bold"><a href="view_company.aspx" style="padding-left:48px;" class="waves-effect waves-teal">Set Shcedule</a></li>
-        <li class="bold"><a href="#" style="padding-left:48px;" class="waves-effect waves-teal">View test result</a></li>
-        <li class="bold"><a href="student_logout.aspx" style="padding-left:48px;" class="waves-effect waves-teal">Logout</a></li>
+    <ul id="nav-mobile" class="side-nav fixed" style="height: 100%; width: 24%; transform: translateX(0px); border-right: solid thin #e0e0e0; transform: translateX(0px); margin: 0px 0px 0px 0px; padding-top: 5.35%;">
+        <li class="bold"><a href="#" style="padding-left: 48px;" class="waves-effect waves-teal">Deshboard</a></li>
+        <li class="bold"><a href="add_question.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">Add Question</a></li>
+        <li class="bold"><a href="view_question.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">View & Edit Question</a></li>
+        <li class="bold"><a href="edit_details.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">View & edit details</a></li>
+        <li class="bold"><a href="view_company.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">Set Shcedule</a></li>
+        <li class="bold"><a href="#" style="padding-left: 48px;" class="waves-effect waves-teal">View test result</a></li>
+        <li class="bold"><a href="student_logout.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">Logout</a></li>
     </ul>
 
 
-   
-     <div style="margin-top:6%; width:100%; padding: 0px; position:absolute; padding-left:24%;">
-        <div class="grey lighten-4" style="width:100%; padding-top:4px; padding-bottom:6px;">
+
+    <div style="margin-top: 6%; width: 100%; padding: 0px; position: absolute; padding-left: 24%;">
+        <div class="grey lighten-4" style="width: 100%; padding-top: 4px; padding-bottom: 6px;">
             <h4 class="center-align">Select Intrested Companies</h4>
         </div>
-         <div class="container" style=" margin-top:1%; margin-left:9%; width:90%; max-width:600px;">
-             <form runat="server">
-       <ul class="collapsible popout" data-collapsible="accordion"  id="companies" runat="server">
-        
-        
-        
-      </ul>
-             </form> 
-</div>
-            
+        <div class="container" style="margin-top: 1%; margin-left: 9%; width: 90%; max-width: 600px;">
+            <form runat="server">
+                <ul class="collapsible popout" data-collapsible="accordion" id="companies" runat="server">
+                </ul>
+            </form>
+        </div>
+
     </div>
- </body>
+</body>
 </html>

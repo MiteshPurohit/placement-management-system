@@ -71,6 +71,7 @@
     <Content Include="company\add_question.aspx" />
     <Content Include="company\company_home.aspx" />
     <Content Include="company\company_login.aspx" />
+    <Content Include="company\edit_details.aspx" />
     <Content Include="company\ragister_company.aspx" />
     <Content Include="company\view_question.aspx" />
     <Content Include="student\select_company.aspx" />
@@ -118,6 +119,13 @@
     </Compile>
     <Compile Include="company\company_login.aspx.designer.cs">
       <DependentUpon>company_login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="company\edit_details.aspx.cs">
+      <DependentUpon>edit_details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="company\edit_details.aspx.designer.cs">
+      <DependentUpon>edit_details.aspx</DependentUpon>
     </Compile>
     <Compile Include="company\ragister_company.aspx.cs">
       <DependentUpon>ragister_company.aspx</DependentUpon>

@@ -33,7 +33,7 @@
         <li class="bold"><a href="#" style="padding-left:48px;" class="waves-effect waves-teal">Deshboard</a></li>
         <li class="bold"><a href="add_question.aspx" style="padding-left:48px;" class="waves-effect waves-teal">Add Question</a></li>
          <li class="bold"><a href="view_question.aspx" style="padding-left:48px;" class="waves-effect waves-teal">View & Edit Question</a></li>
-        <li class="bold"><a href="student_add_details.aspx" style="padding-left:48px;" class="waves-effect waves-teal">View & edit details</a></li>
+        <li class="bold"><a href="edit_details.aspx" style="padding-left:48px;" class="waves-effect waves-teal">View & edit details</a></li>
         <li class="bold"><a href="view_company.aspx" style="padding-left:48px;" class="waves-effect waves-teal">Set Shcedule</a></li>
         <li class="bold"><a href="#" style="padding-left:48px;" class="waves-effect waves-teal">View test result</a></li>
         <li class="bold"><a href="student_logout.aspx" style="padding-left:48px;" class="waves-effect waves-teal">Logout</a></li>
