@@ -46,7 +46,7 @@ namespace placement_management_system.company {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText cname;
+        protected global::System.Web.UI.WebControls.TextBox cname;
         
         /// <summary>
         /// description control.
@@ -55,7 +55,7 @@ namespace placement_management_system.company {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTextArea description;
+        protected global::System.Web.UI.WebControls.TextBox description;
         
         /// <summary>
         /// job_post control.
@@ -64,7 +64,7 @@ namespace placement_management_system.company {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText job_post;
+        protected global::System.Web.UI.WebControls.TextBox job_post;
         
         /// <summary>
         /// job_salary control.
@@ -73,7 +73,7 @@ namespace placement_management_system.company {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText job_salary;
+        protected global::System.Web.UI.WebControls.TextBox job_salary;
         
         /// <summary>
         /// job_location control.
@@ -82,7 +82,7 @@ namespace placement_management_system.company {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText job_location;
+        protected global::System.Web.UI.WebControls.TextBox job_location;
         
         /// <summary>
         /// other_details control.
@@ -91,7 +91,7 @@ namespace placement_management_system.company {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTextArea other_details;
+        protected global::System.Web.UI.WebControls.TextBox other_details;
         
         /// <summary>
         /// email control.
@@ -100,7 +100,7 @@ namespace placement_management_system.company {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl email;
+        protected global::System.Web.UI.WebControls.TextBox email;
         
         /// <summary>
         /// phone control.
@@ -109,7 +109,7 @@ namespace placement_management_system.company {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl phone;
+        protected global::System.Web.UI.WebControls.TextBox phone;
         
         /// <summary>
         /// min_cpi control.
@@ -118,7 +118,7 @@ namespace placement_management_system.company {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText min_cpi;
+        protected global::System.Web.UI.WebControls.TextBox min_cpi;
         
         /// <summary>
         /// branch control.
@@ -127,7 +127,7 @@ namespace placement_management_system.company {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText branch;
+        protected global::System.Web.UI.WebControls.TextBox branch;
         
         /// <summary>
         /// reg_btn control.

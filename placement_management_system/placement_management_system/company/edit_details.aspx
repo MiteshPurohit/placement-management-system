@@ -52,59 +52,61 @@
                         <form runat="server">
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <input type="text" runat="server" id="cname" name="cname" class="validate" />
+                                    <asp:TextBox ID="cname" name="cname" class="validate" runat="server"></asp:TextBox>
+                        
+                                   
                                     <label for="cname">Company Name</label>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <textarea id="description" name="description" class="materialize-textarea" runat="server"></textarea>
+                                    <asp:TextBox ID="description" name="description" runat="server"  class="materialize-textarea" TextMode="MultiLine"></asp:TextBox>
                                     <label for="description">Company Description</label>
                                 </div>
                             </div>
 
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <input type="text" runat="server" name="job_post" id="job_post" class="validate" />
+                                     <asp:TextBox ID="job_post" name="job_post" class="validate" runat="server" ></asp:TextBox>
                                     <label for="job_post">Job Post</label>
                                 </div>
                             </div>
 
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <input type="text" runat="server" name="job_salary" id="job_salary" class="validate" />
+                                    <asp:TextBox ID="job_salary" name="job_salary" class="validate" runat="server" ></asp:TextBox>
                                     <label for="job_salary">Tentative Annual Salary</label>
                                 </div>
                             </div>
 
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <input type="text" runat="server" name="job_location" id="job_location" class="validate" />
+                                  <asp:TextBox ID="job_location" name="job_location" class="validate" runat="server" ></asp:TextBox>
                                     <label for="job_location">Tentative Job Location</label>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <textarea id="other_details" name="other_details" class="materialize-textarea" runat="server"></textarea>
+                                   <asp:TextBox ID="other_details" name="other_details" TextMode="MultiLine"  class="materialize-textarea" runat="server" ></asp:TextBox>
                                     <label for="other_details">Other Job Details</label>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <input type="email" runat="server" name="email" id="email" class="validate" />
+                                   <asp:TextBox ID="email" name="email" class="validate" runat="server" ></asp:TextBox>
                                     <label for="email">Company E-mail Id</label>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <input type="tel" runat="server" name="phone" id="phone" class="validate" />
+                                       <asp:TextBox ID="phone" name="phone" class="validate" runat="server" ></asp:TextBox>
                                     <label for="phone">Company Contact Number</label>
                                 </div>
                             </div>
 
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <input type="text" runat="server" name="min_cpi" id="min_cpi" class="validate" />
+                                       <asp:TextBox ID="min_cpi" name="min_cpi" class="validate" runat="server" ></asp:TextBox>
                                     <label for="min_cpi">Minimum CPI Required</label>
                                 </div>
                             </div>
@@ -114,16 +116,11 @@
 
                                 <div class="input-field col s12">
                               
-                                  <input type="text" runat="server" name="branch" id="branch" class="validate" />
+                                  <asp:TextBox ID="branch" name="branch" class="validate" runat="server" ></asp:TextBox>
                                     <label for="branch">Required Branches(branch short name saperated by ',')</label>
                                     
                                 </div>
-                                <script>
-                                    $(document).ready(function () {
-                                        $('select').material_select();
-                                    });
-                                </script>
-
+                               
                             </div>
 
                            

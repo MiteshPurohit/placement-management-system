@@ -12,6 +12,10 @@ namespace placement_management_system.company
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+
+           
             Session["company_id"] = "1";
             SqlConnection con = new SqlConnection();
             con.ConnectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename='C:\Users\Sanket Bhimani\Source\Repos\placement-management-system\placement_management_system\placement_management_system\db\pmsdb.mdf';Integrated Security=True;Connect Timeout=30";
@@ -23,33 +27,52 @@ namespace placement_management_system.company
             reader.Read();
             name.Text = reader["company_name"].ToString();
 
-            cname.Value = reader["company_name"].ToString();
-            branch.Value = reader["required_branches"].ToString();
-            description.Value = reader["description"].ToString();
-            job_post.Value = reader["job_post"].ToString();
-            job_salary.Value = reader["tentative_salary"].ToString();
-            job_location.Value = reader["job_location"].ToString();
-            other_details.Value = reader["other_details"].ToString();
-            email.Value = reader["email"].ToString();
-            phone.Value = reader["phone"].ToString();
-            min_cpi.Value = reader["required_min_cpi"].ToString();
+            cname.Text = reader["company_name"].ToString();
+            branch.Text = reader["required_branches"].ToString();
+            description.Text = reader["description"].ToString();
+            job_post.Text = reader["job_post"].ToString();
+            job_salary.Text = reader["tentative_salary"].ToString();
+            job_location.Text = reader["job_location"].ToString();
+            other_details.Text = reader["other_details"].ToString();
+            email.Text = reader["email"].ToString();
+            phone.Text = reader["phone"].ToString();
+            min_cpi.Text = reader["required_min_cpi"].ToString();
            
             con.Close();
+            }
 
         }
 
         protected void submit_Click(object sender, EventArgs e)
         {
-            String id = "1";
+            String id = Session["company_id"].ToString();
             
             SqlConnection con = new SqlConnection();
             con.ConnectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename='C:\Users\Sanket Bhimani\Source\Repos\placement-management-system\placement_management_system\placement_management_system\db\pmsdb.mdf';Integrated Security=True;Connect Timeout=30";
             con.Open();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
-            cmd.CommandText = "UPDATE company_table set other_details='" + other_details.Value.ToString() + "',job_post='" + job_post.Value.ToString() + "',job_location='" + job_location.Value.ToString() + "',tentative_salary='" + job_salary.Value.ToString() + "',company_name='" + cname.Value.ToString() + "', required_branches = '" + branch.Value.ToString().ToUpper() + "', description = '" + description.Value.ToString() + "', phone = '" + phone.Value.ToString() + "', required_min_cpi = '" + min_cpi.Value.ToString() + "', email = '" + email.Value.ToString() + "' where company_id = '" + id + "'";
+            cmd.CommandText = "UPDATE company_table set other_details='" + other_details.Text.ToString() + "',job_post='" + job_post.Text.ToString() + "',job_location='" + job_location.Text.ToString() + "',tentative_salary='" + job_salary.Text.ToString() + "',company_name='" + cname.Text.ToString() + "', required_branches = '" + branch.Text.ToString().ToUpper() + "', description = '" + description.Text.ToString() + "', phone = '" + phone.Text.ToString() + "', required_min_cpi = '" + min_cpi.Text.ToString() + "', email = '" + email.Text.ToString() + "' where company_id = '" + id + "'";
             name.Text = cmd.CommandText;
             cmd.ExecuteNonQuery();
+            SqlCommand cmd1 = new SqlCommand();
+            cmd1.Connection = con;
+            cmd1.CommandText = "SELECT * from company_table where company_id = '" + Session["company_id"].ToString() + "'";
+            SqlDataReader reader = cmd1.ExecuteReader();
+            reader.Read();
+            name.Text = reader["company_name"].ToString();
+
+            cname.Text = reader["company_name"].ToString();
+            branch.Text = reader["required_branches"].ToString();
+            description.Text = reader["description"].ToString();
+            job_post.Text = reader["job_post"].ToString();
+            job_salary.Text = reader["tentative_salary"].ToString();
+            job_location.Text = reader["job_location"].ToString();
+            other_details.Text = reader["other_details"].ToString();
+            email.Text = reader["email"].ToString();
+            phone.Text = reader["phone"].ToString();
+            min_cpi.Text = reader["required_min_cpi"].ToString();
+           
             con.Close();
             
         }

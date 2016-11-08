@@ -73,12 +73,15 @@
     <Content Include="company\company_login.aspx" />
     <Content Include="company\edit_details.aspx" />
     <Content Include="company\ragister_company.aspx" />
+    <Content Include="company\start_test.aspx" />
     <Content Include="company\view_question.aspx" />
     <Content Include="student\select_company.aspx" />
+    <Content Include="student\select_company_for_test.aspx" />
     <Content Include="student\student_add_details.aspx" />
     <Content Include="student\student_home.aspx" />
     <Content Include="student\student_login.aspx" />
     <Content Include="student\student_logout.aspx" />
+    <Content Include="student\test.aspx" />
     <Content Include="student\view_company.aspx" />
     <Content Include="student\view_company_details.aspx" />
     <Content Include="student\_select_company.aspx" />
@@ -134,6 +137,13 @@
     <Compile Include="company\ragister_company.aspx.designer.cs">
       <DependentUpon>ragister_company.aspx</DependentUpon>
     </Compile>
+    <Compile Include="company\start_test.aspx.cs">
+      <DependentUpon>start_test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="company\start_test.aspx.designer.cs">
+      <DependentUpon>start_test.aspx</DependentUpon>
+    </Compile>
     <Compile Include="company\view_question.aspx.cs">
       <DependentUpon>view_question.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -148,6 +158,13 @@
     </Compile>
     <Compile Include="student\select_company.aspx.designer.cs">
       <DependentUpon>select_company.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="student\select_company_for_test.aspx.cs">
+      <DependentUpon>select_company_for_test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="student\select_company_for_test.aspx.designer.cs">
+      <DependentUpon>select_company_for_test.aspx</DependentUpon>
     </Compile>
     <Compile Include="student\student_add_details.aspx.cs">
       <DependentUpon>student_add_details.aspx</DependentUpon>
@@ -176,6 +193,13 @@
     </Compile>
     <Compile Include="student\student_logout.aspx.designer.cs">
       <DependentUpon>student_logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="student\test.aspx.cs">
+      <DependentUpon>test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="student\test.aspx.designer.cs">
+      <DependentUpon>test.aspx</DependentUpon>
     </Compile>
     <Compile Include="student\view_company.aspx.cs">
       <DependentUpon>view_company.aspx</DependentUpon>
