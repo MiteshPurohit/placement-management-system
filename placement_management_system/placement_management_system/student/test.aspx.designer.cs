@@ -49,6 +49,15 @@ namespace placement_management_system.student {
         protected global::System.Web.UI.WebControls.Button start_test_btn;
         
         /// <summary>
+        /// complete_test_div control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl complete_test_div;
+        
+        /// <summary>
         /// questions_div control.
         /// </summary>
         /// <remarks>
@@ -58,6 +67,15 @@ namespace placement_management_system.student {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl questions_div;
         
         /// <summary>
+        /// _script control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl _script;
+        
+        /// <summary>
         /// questions control.
         /// </summary>
         /// <remarks>
@@ -65,6 +83,15 @@ namespace placement_management_system.student {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView questions;
+        
+        /// <summary>
+        /// submit_btn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button submit_btn;
         
         /// <summary>
         /// question_db control.

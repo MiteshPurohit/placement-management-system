@@ -29,8 +29,8 @@
     </nav>
     <ul id="nav-mobile" class="side-nav fixed" style="height: 100%; width: 24%; transform: translateX(0px); border-right: solid thin #e0e0e0; transform: translateX(0px); margin: 0px 0px 0px 0px; padding-top: 5.35%;">
         <li class="bold"><a href="#" style="padding-left: 48px;" class="waves-effect waves-teal">Deshboard</a></li>
-        <li class="bold"><a href="#" style="padding-left: 48px;" class="waves-effect waves-teal">Written test</a></li>
-        <li class="bold active"><a href="student_add_details.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">View & edit details</a></li>
+        <li class="bold active"><a href="#" style="padding-left: 48px;" class="waves-effect waves-teal">Written test</a></li>
+        <li class="bold"><a href="student_add_details.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">View & edit details</a></li>
         <li class="bold"><a href="view_company.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">View companies</a></li>
         <li class="bold"><a href="select_company.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">Select intrested companies</a></li>
         <li class="bold"><a href="#" style="padding-left: 48px;" class="waves-effect waves-teal">View test result</a></li>
@@ -39,20 +39,35 @@
 
 
     <form runat="server" id="question_form">
-
-        <div class="container" style="margin-top: 6%; width: 100%; padding: 0px; position: absolute; padding-left: 27%;">
+        
+     
+            <div style="margin-top:6%; width:100%; padding: 0px; position:absolute; padding-left:24%;">
            
-            <div runat="server" id="start_test_div">
+            <div class="grey lighten-4" style="width:100%; padding-top:4px; padding-bottom:6px;">
+            <h4 class="center-align">Written Test</h4>
+        </div>
+
+
+            <div runat="server" id="start_test_div" style="padding:6%;">
                 <asp:Button ID="start_test_btn" runat="server" Text="Start test" class="waves-effect waves-light btn" OnClick="start_test_Click" />
             </div>
-            <div runat="server" id="questions_div">
-           
+                 <div runat="server" id="complete_test_div" style="padding:6%;">
+                <h3>Test Completed :)</h3>
+            </div>
+            <div runat="server" id="questions_div" style="padding-top:9%; padding-left:3%;">
+           <div style="float:right; right:1%; top:15%; position:fixed; font-size:3em;" id="timer">
+               
+           </div>
+                <div runat="server" id="_script">
+
+                </div>
+                
                 <asp:GridView ID="questions" runat="server" AutoGenerateColumns="False" DataSourceID="question_db" CssClass="bordered highlight">
                     <Columns>
                         <asp:TemplateField ConvertEmptyStringToNull="False" HeaderText="Question" SortExpression="question">
 
                             <ItemTemplate>
-                                <div style="max-width: 360px; min-width: 90px; word-wrap: break-word;">
+                                <div style="max-width: 300px; min-width: 90px; word-wrap: break-word;">
                                     <%# Eval("question") %>
                                 </div>
                             </ItemTemplate>
@@ -60,7 +75,7 @@
                         <asp:TemplateField ConvertEmptyStringToNull="False" HeaderText="Option A" SortExpression="option_a">
 
                             <ItemTemplate>
-                                <div style="max-width: 210px; min-width: 90px; word-wrap: break-word;">
+                                <div style="max-width: 200px; min-width: 90px; word-wrap: break-word;">
                                     <input type="radio" id="<%# Eval("question_id") %>a" style="margin-top:1%;" name="<%# Eval("question_id") %>" value="1" />
                                     <label for="<%# Eval("question_id") %>a"></label>
                                     <%# Eval("option_a") %>
@@ -70,7 +85,7 @@
                         <asp:TemplateField ConvertEmptyStringToNull="False" HeaderText="Option B" SortExpression="option_b">
 
                             <ItemTemplate>
-                                <div style="max-width: 210px; min-width: 90px; word-wrap: break-word;">
+                                <div style="max-width: 200px; min-width: 90px; word-wrap: break-word;">
                                     <input type="radio" id="<%# Eval("question_id") %>b" name="<%# Eval("question_id") %>" value="2" />
                                     <label for="<%# Eval("question_id") %>b"></label>
                                     <%# Eval("option_b") %>
@@ -80,7 +95,7 @@
                         <asp:TemplateField ConvertEmptyStringToNull="False" HeaderText="Option C" SortExpression="option_c">
 
                             <ItemTemplate>
-                                <div style="max-width: 210px; min-width: 90px; word-wrap: break-word;">
+                                <div style="max-width: 200px; min-width: 90px; word-wrap: break-word;">
                                     <input type="radio" id="<%# Eval("question_id") %>c" name="<%# Eval("question_id") %>" value="3" />
                                     <label for="<%# Eval("question_id") %>c"></label>
                                     <%# Eval("option_c") %>
@@ -90,7 +105,7 @@
                         <asp:TemplateField ConvertEmptyStringToNull="False" HeaderText="Option D" SortExpression="option_d">
 
                             <ItemTemplate>
-                                <div style="max-width: 210px; min-width: 90px; word-wrap: break-word;">
+                                <div style="max-width: 200px; min-width: 90px; word-wrap: break-word;">
                                     <input type="radio" id="<%# Eval("question_id") %>d" name="<%# Eval("question_id") %>" value="4" />
                                     <label for="<%# Eval("question_id") %>d"></label>
                                     <%# Eval("option_d") %>
@@ -100,13 +115,8 @@
                         <asp:BoundField DataField="weight" HeaderText="Weight" SortExpression="weight"></asp:BoundField>
                     </Columns>
                 </asp:GridView>
-                <input type="submit" onsubmit="submit_func();" class="waves-effect waves-light btn" style="margin-top:3%;" value="submit"/>  
-                <script>
-                    function submit_func() {
-                        $("#question_form").submit();
-                        return false;
-                    }
-                </script>        
+              
+                <asp:Button ID="submit_btn" runat="server" Text="submit" class="waves-effect waves-light btn" style="margin-top:3%; top: 0px; left: 0px;" OnClick="submit_btn_Click" />
             <asp:SqlDataSource runat="server" ID="question_db" ConnectionString='<%$ ConnectionStrings:pmsdbConnectionString %>' SelectCommand="SELECT [question], [option_a], [option_b], [option_c], [option_d], [weight], [question_id] FROM [question_table] WHERE ([company_id] = @company_id)">
                 <SelectParameters>
                     <asp:SessionParameter SessionField="company_id" DefaultValue="1" Name="company_id" Type="Int32"></asp:SessionParameter>

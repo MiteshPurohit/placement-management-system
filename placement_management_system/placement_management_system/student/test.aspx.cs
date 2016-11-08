@@ -10,8 +10,10 @@ namespace placement_management_system.student
 {
     public partial class test : System.Web.UI.Page
     {
+       
         protected void Page_Load(object sender, EventArgs e)
         {
+            Session["student_id"] = '1';
             SqlConnection con = new SqlConnection();
             con.ConnectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename='C:\Users\Sanket Bhimani\Source\Repos\placement-management-system\placement_management_system\placement_management_system\db\pmsdb.mdf';Integrated Security=True;MultipleActiveResultSets=True;Connect Timeout=30";
             con.Open();
@@ -24,12 +26,44 @@ namespace placement_management_system.student
             con.Close();
             questions_div.Visible = false;
             start_test_div.Visible = true;
+            complete_test_div.Style.Add("display", "none");
         }
 
         protected void start_test_Click(object sender, EventArgs e)
         {
+            SqlConnection con = new SqlConnection();
+            con.ConnectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename='C:\Users\Sanket Bhimani\Source\Repos\placement-management-system\placement_management_system\placement_management_system\db\pmsdb.mdf';Integrated Security=True;MultipleActiveResultSets=True;Connect Timeout=30";
+            con.Open();
+            SqlCommand c = new SqlCommand();
+            c.Connection = con;
+            c.CommandText = "SELECT * from schedule where company_id = '" + Request.QueryString["id"] + "'";
+            SqlDataReader r = c.ExecuteReader();
+            r.Read();
             questions_div.Visible = true;
             start_test_div.Visible = false;
+            complete_test_div.Style.Add("display", "none");
+            _script.InnerHtml = @"<script> var timerVar = setInterval(countTimer, 1000);
+var totalSeconds = " + Int32.Parse(r["test_h"].ToString()) * 60 * 60 + Int32.Parse(r["test_m"].ToString()) * 60 + @";
+function countTimer() {
+--totalSeconds;
+if(totalSeconds==0){
+clearInterval(timerVar);
+$('#complete_test_div').css('display', 'block');
+$('#questions_div').css('display', 'none');
+$('#submit_btn').click();
+}
+var hour = Math.floor(totalSeconds /3600);
+var minute = Math.floor((totalSeconds - hour*3600)/60);
+var seconds = totalSeconds - (hour*3600 + minute*60);
+
+document.getElementById('timer').innerHTML = hour + ':' + minute + ':' + seconds;
+}
+</Script>";
+        }
+
+        protected void submit_btn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
