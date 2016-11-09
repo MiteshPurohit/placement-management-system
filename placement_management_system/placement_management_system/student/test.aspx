@@ -29,7 +29,7 @@
     </nav>
     <ul id="nav-mobile" class="side-nav fixed" style="height: 100%; width: 24%; transform: translateX(0px); border-right: solid thin #e0e0e0; transform: translateX(0px); margin: 0px 0px 0px 0px; padding-top: 5.35%;">
         <li class="bold"><a href="#" style="padding-left: 48px;" class="waves-effect waves-teal">Deshboard</a></li>
-        <li class="bold active"><a href="#" style="padding-left: 48px;" class="waves-effect waves-teal">Written test</a></li>
+        <li class="bold active"><a href="select_company_for_test.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">Written test</a></li>
         <li class="bold"><a href="student_add_details.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">View & edit details</a></li>
         <li class="bold"><a href="view_company.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">View companies</a></li>
         <li class="bold"><a href="select_company.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">Select intrested companies</a></li>
@@ -51,8 +51,10 @@
             <div runat="server" id="start_test_div" style="padding:6%;">
                 <asp:Button ID="start_test_btn" runat="server" Text="Start test" class="waves-effect waves-light btn" OnClick="start_test_Click" />
             </div>
-                 <div runat="server" id="complete_test_div" style="padding:6%;">
-                <h3>Test Completed :)</h3>
+               
+                  <div runat="server" id="test_given_div" style="padding:6%;">
+                <h3>You have done with this test :)</h3>
+                      <h4>Your score is: <span id="score" runat="server"></span></h4>
             </div>
             <div runat="server" id="questions_div" style="padding-top:9%; padding-left:3%;">
            <div style="float:right; right:1%; top:15%; position:fixed; font-size:3em;" id="timer">
@@ -76,7 +78,7 @@
 
                             <ItemTemplate>
                                 <div style="max-width: 200px; min-width: 90px; word-wrap: break-word;">
-                                    <input type="radio" id="<%# Eval("question_id") %>a" style="margin-top:1%;" name="<%# Eval("question_id") %>" value="1" />
+                                    <input type="radio" id="<%# Eval("question_id") %>a"  style="margin-top:1%;" name="snk<%# Eval("question_id") %>" value="1" />
                                     <label for="<%# Eval("question_id") %>a"></label>
                                     <%# Eval("option_a") %>
                                 </div>
@@ -86,7 +88,7 @@
 
                             <ItemTemplate>
                                 <div style="max-width: 200px; min-width: 90px; word-wrap: break-word;">
-                                    <input type="radio" id="<%# Eval("question_id") %>b" name="<%# Eval("question_id") %>" value="2" />
+                                    <input type="radio" id="<%# Eval("question_id") %>b" style="margin-top:1%;" name="snk<%# Eval("question_id") %>" value="2" />
                                     <label for="<%# Eval("question_id") %>b"></label>
                                     <%# Eval("option_b") %>
                                 </div>
@@ -96,7 +98,7 @@
 
                             <ItemTemplate>
                                 <div style="max-width: 200px; min-width: 90px; word-wrap: break-word;">
-                                    <input type="radio" id="<%# Eval("question_id") %>c" name="<%# Eval("question_id") %>" value="3" />
+                                    <input type="radio" id="<%# Eval("question_id") %>c"  style="margin-top:1%;" name="snk<%# Eval("question_id") %>" value="3" />
                                     <label for="<%# Eval("question_id") %>c"></label>
                                     <%# Eval("option_c") %>
                                 </div>
@@ -106,17 +108,21 @@
 
                             <ItemTemplate>
                                 <div style="max-width: 200px; min-width: 90px; word-wrap: break-word;">
-                                    <input type="radio" id="<%# Eval("question_id") %>d" name="<%# Eval("question_id") %>" value="4" />
+                                    <input type="radio" id="<%# Eval("question_id") %>d" style="margin-top:1%;" name="snk<%# Eval("question_id") %>" value="4" />
+                                     
                                     <label for="<%# Eval("question_id") %>d"></label>
-                                    <%# Eval("option_d") %>
-                                </div>
+                                     <%# Eval("option_d") %>
+                                        </div>
+                                    <input type="radio" id="<%# Eval("question_id") %>e" style="display:none;" name="snk<%# Eval("question_id") %>" value="0" checked="checked" />
+                                   
+                            
                             </ItemTemplate>
                         </asp:TemplateField>
                         <asp:BoundField DataField="weight" HeaderText="Weight" SortExpression="weight"></asp:BoundField>
                     </Columns>
                 </asp:GridView>
-              
-                <asp:Button ID="submit_btn" runat="server" Text="submit" class="waves-effect waves-light btn" style="margin-top:3%; top: 0px; left: 0px;" OnClick="submit_btn_Click" />
+              <input runat="server" id="company_id" type="hidden" name="id" />
+                <asp:Button ID="submit_btn" runat="server" Text="submit" class="waves-effect waves-light btn" style="margin-top:3%; top: 0px; left: 0px;"  postbackurl="write_question.aspx"  />
             <asp:SqlDataSource runat="server" ID="question_db" ConnectionString='<%$ ConnectionStrings:pmsdbConnectionString %>' SelectCommand="SELECT [question], [option_a], [option_b], [option_c], [option_d], [weight], [question_id] FROM [question_table] WHERE ([company_id] = @company_id)">
                 <SelectParameters>
                     <asp:SessionParameter SessionField="company_id" DefaultValue="1" Name="company_id" Type="Int32"></asp:SessionParameter>

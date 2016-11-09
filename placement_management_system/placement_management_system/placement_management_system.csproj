@@ -77,6 +77,7 @@
     <Content Include="company\view_question.aspx" />
     <Content Include="student\select_company.aspx" />
     <Content Include="student\select_company_for_test.aspx" />
+    <Content Include="student\set_viewstate.aspx" />
     <Content Include="student\student_add_details.aspx" />
     <Content Include="student\student_home.aspx" />
     <Content Include="student\student_login.aspx" />
@@ -84,6 +85,7 @@
     <Content Include="student\test.aspx" />
     <Content Include="student\view_company.aspx" />
     <Content Include="student\view_company_details.aspx" />
+    <Content Include="student\write_question.aspx" />
     <Content Include="student\_select_company.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -166,6 +168,13 @@
     <Compile Include="student\select_company_for_test.aspx.designer.cs">
       <DependentUpon>select_company_for_test.aspx</DependentUpon>
     </Compile>
+    <Compile Include="student\set_viewstate.aspx.cs">
+      <DependentUpon>set_viewstate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="student\set_viewstate.aspx.designer.cs">
+      <DependentUpon>set_viewstate.aspx</DependentUpon>
+    </Compile>
     <Compile Include="student\student_add_details.aspx.cs">
       <DependentUpon>student_add_details.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -214,6 +223,13 @@
     </Compile>
     <Compile Include="student\view_company_details.aspx.designer.cs">
       <DependentUpon>view_company_details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="student\write_question.aspx.cs">
+      <DependentUpon>write_question.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="student\write_question.aspx.designer.cs">
+      <DependentUpon>write_question.aspx</DependentUpon>
     </Compile>
     <Compile Include="student\_select_company.aspx.cs">
       <DependentUpon>_select_company.aspx</DependentUpon>

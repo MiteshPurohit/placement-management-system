@@ -24,11 +24,11 @@ namespace placement_management_system.student
             name.Text = r["full_name"].ToString();
             r.Close();
 
-            c.CommandText = "SELECT company_id, company_name from company_table where company_id in (select company_id from company_choice where student_id = '" + Session["student_id"].ToString() + "')";
+            c.CommandText = "SELECT company_id, company_name from company_table where company_id in (select company_id from company_choice where student_id = '" + Session["student_id"].ToString() + "') and company_id in (select company_id from schedule where start = 'True')";
             r = c.ExecuteReader();
             
             
-            String template = @"<a href='test.aspx?id={0}' class='collection-item'>{1}</a>";
+            String template = @"<a href='set_viewstate.aspx?id={0}' class='collection-item'>{1}</a>";
             while (r.Read())
             {
                 company_list.InnerHtml += String.Format(template, r["company_id"], r["company_name"]);

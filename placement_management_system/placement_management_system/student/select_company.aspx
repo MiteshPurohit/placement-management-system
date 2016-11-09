@@ -30,7 +30,7 @@
     </nav>
      <ul id="nav-mobile" class="side-nav fixed" style="height:100%; width:24%; transform: translateX(0px); border-right:solid thin #e0e0e0; transform: translateX(0px); margin:0px 0px 0px 0px; padding-top:5.35%;">
         <li class="bold"><a href="#" style="padding-left:48px;" class="waves-effect waves-teal">Deshboard</a></li>
-        <li class="bold"><a href="#" style="padding-left:48px;" class="waves-effect waves-teal">Written test</a></li>
+        <li class="bold"><a href="select_company_for_test.aspx" style="padding-left:48px;" class="waves-effect waves-teal">Written test</a></li>
         <li class="bold"><a href="student_add_details.aspx" style="padding-left:48px;" class="waves-effect waves-teal">View & edit details</a></li>
         <li class="bold"><a href="view_company.aspx" style="padding-left:48px;" class="waves-effect waves-teal">View companies</a></li>
         <li class="bold active"><a href="select_company.aspx" style="padding-left:48px;" class="waves-effect waves-teal">Select intrested companies</a></li>

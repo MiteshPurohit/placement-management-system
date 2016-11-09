@@ -49,13 +49,22 @@ namespace placement_management_system.student {
         protected global::System.Web.UI.WebControls.Button start_test_btn;
         
         /// <summary>
-        /// complete_test_div control.
+        /// test_given_div control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl complete_test_div;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl test_given_div;
+        
+        /// <summary>
+        /// score control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl score;
         
         /// <summary>
         /// questions_div control.
@@ -83,6 +92,15 @@ namespace placement_management_system.student {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView questions;
+        
+        /// <summary>
+        /// company_id control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden company_id;
         
         /// <summary>
         /// submit_btn control.
