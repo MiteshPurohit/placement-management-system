@@ -30,13 +30,13 @@
 
     </nav>
      <ul id="nav-mobile" class="side-nav fixed" style="height:100%; width:24%; transform: translateX(0px); border-right:solid thin #e0e0e0; transform: translateX(0px); margin:0px 0px 0px 0px; padding-top:5.35%;">
-        <li class="bold"><a href="#" style="padding-left:48px;" class="waves-effect waves-teal">Deshboard</a></li>
-        <li class="bold"><a href="add_question.aspx" style="padding-left:48px;" class="waves-effect waves-teal">Add Question</a></li>
-         <li class="bold"><a href="view_question.aspx" style="padding-left:48px;" class="waves-effect waves-teal">View & Edit Question</a></li>
-        <li class="bold"><a href="edit_details.aspx" style="padding-left:48px;" class="waves-effect waves-teal">View & edit details</a></li>
-        <li class="bold"><a href="view_company.aspx" style="padding-left:48px;" class="waves-effect waves-teal">Set Shcedule</a></li>
-        <li class="bold"><a href="#" style="padding-left:48px;" class="waves-effect waves-teal">View test result</a></li>
-        <li class="bold"><a href="student_logout.aspx" style="padding-left:48px;" class="waves-effect waves-teal">Logout</a></li>
+       <li class="bold"><a href="#" style="padding-left: 48px;" class="waves-effect waves-teal">Deshboard</a></li>
+        <li class="bold active"><a href="add_question.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">Add Question</a></li>
+        <li class="bold"><a href="view_question.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">View & Edit Question</a></li>
+        <li class="bold"><a href="edit_details.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">View & edit details</a></li>
+         <li class="bold"><a href="start_test.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">Start Test</a></li>
+        <li class="bold"><a href="set_schedule.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">Set Schedule</a></li>
+        <li class="bold"><a href="student_logout.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">Logout</a></li>
     </ul>
 
 

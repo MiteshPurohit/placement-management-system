@@ -65,14 +65,17 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="admin\admin_home.aspx" />
+    <Content Include="admin\add_student.aspx" />
     <Content Include="admin\admin_login.aspx" />
     <Content Include="admin\admin.xml" />
+    <Content Include="admin\view_company.aspx" />
+    <Content Include="admin\view_student.aspx" />
     <Content Include="company\add_question.aspx" />
     <Content Include="company\company_home.aspx" />
     <Content Include="company\company_login.aspx" />
     <Content Include="company\edit_details.aspx" />
     <Content Include="company\ragister_company.aspx" />
+    <Content Include="company\set_schedule.aspx" />
     <Content Include="company\start_test.aspx" />
     <Content Include="company\view_question.aspx" />
     <Content Include="student\select_company.aspx" />
@@ -90,12 +93,12 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="admin\admin_home.aspx.cs">
-      <DependentUpon>admin_home.aspx</DependentUpon>
+    <Compile Include="admin\add_student.aspx.cs">
+      <DependentUpon>add_student.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="admin\admin_home.aspx.designer.cs">
-      <DependentUpon>admin_home.aspx</DependentUpon>
+    <Compile Include="admin\add_student.aspx.designer.cs">
+      <DependentUpon>add_student.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\admin_login.aspx.cs">
       <DependentUpon>admin_login.aspx</DependentUpon>
@@ -103,6 +106,20 @@
     </Compile>
     <Compile Include="admin\admin_login.aspx.designer.cs">
       <DependentUpon>admin_login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\view_company.aspx.cs">
+      <DependentUpon>view_company.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\view_company.aspx.designer.cs">
+      <DependentUpon>view_company.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\view_student.aspx.cs">
+      <DependentUpon>view_student.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\view_student.aspx.designer.cs">
+      <DependentUpon>view_student.aspx</DependentUpon>
     </Compile>
     <Compile Include="company\add_question.aspx.cs">
       <DependentUpon>add_question.aspx</DependentUpon>
@@ -138,6 +155,13 @@
     </Compile>
     <Compile Include="company\ragister_company.aspx.designer.cs">
       <DependentUpon>ragister_company.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="company\set_schedule.aspx.cs">
+      <DependentUpon>set_schedule.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="company\set_schedule.aspx.designer.cs">
+      <DependentUpon>set_schedule.aspx</DependentUpon>
     </Compile>
     <Compile Include="company\start_test.aspx.cs">
       <DependentUpon>start_test.aspx</DependentUpon>

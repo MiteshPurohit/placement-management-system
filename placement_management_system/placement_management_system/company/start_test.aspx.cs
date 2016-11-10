@@ -24,7 +24,7 @@ namespace placement_management_system.company
             name.Text = reader["company_name"].ToString();
 
             reader.Close();
-            cmd.CommandText = "SELECT * from schedule where company_id = '" + Session["company_id"].ToString() + "'";
+            cmd.CommandText = "SELECT * from company_table where company_id = '" + Session["company_id"].ToString() + "'";
             reader = cmd.ExecuteReader();
             if (reader.Read())
             {
@@ -59,7 +59,7 @@ namespace placement_management_system.company
             con.Open();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
-            cmd.CommandText = "UPDATE schedule set test_h='" + htime.Value.ToString() + "',test_m='" + mtime.Value.ToString() + "',start='true' where company_id = '"+Session["company_id"].ToString()+"'";
+            cmd.CommandText = "UPDATE company_table set test_h='" + htime.Value.ToString() + "',test_m='" + mtime.Value.ToString() + "',start='true' where company_id = '" + Session["company_id"].ToString() + "'";
             
             cmd.ExecuteNonQuery();
             con.Close();
@@ -76,7 +76,7 @@ namespace placement_management_system.company
             con.Open();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
-            cmd.CommandText = "UPDATE schedule set start='false' where company_id = '" + Session["company_id"].ToString() + "'";
+            cmd.CommandText = "UPDATE company_table set start='false' where company_id = '" + Session["company_id"].ToString() + "'";
           
             cmd.ExecuteNonQuery();
             con.Close();

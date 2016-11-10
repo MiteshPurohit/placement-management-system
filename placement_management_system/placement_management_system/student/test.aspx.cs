@@ -61,31 +61,65 @@ namespace placement_management_system.student
             con.Open();
             SqlCommand c = new SqlCommand();
             c.Connection = con;
-            c.CommandText = "SELECT * from schedule where company_id = '" + Session["student_id"].ToString() + "'";
+            c.CommandText = "SELECT * from company_table where company_id = '" + Session["student_id"].ToString() + "'";
             SqlDataReader r = c.ExecuteReader();
             r.Read();
             questions_div.Visible = true;
             start_test_div.Visible = false;
             //complete_test_div.Style.Add("display", "none");
-            _script.InnerHtml = @"<script> var timerVar = setInterval(countTimer, 1000);
-                                var totalSeconds = " + Int32.Parse(r["test_h"].ToString()) * 60 * 60 + Int32.Parse(r["test_m"].ToString()) * 60 + @";
+            _script.InnerHtml = @"<script> 
+var totalSeconds = 0;
+function abcd(){
+if(readCookie('time" + Session["student_id"].ToString() + Session["company_id"].ToString() + @"')!=null){
+//alert(totalSeconds+'###0');
+    totalSeconds = readCookie('time" + Session["student_id"].ToString() + Session["company_id"].ToString() + @"');
+//alert(totalSeconds+'###1');
+}
+else{
+//alert(totalSeconds+'!!!0');
+                                totalSeconds = " + Int32.Parse(r["test_h"].ToString()) * 60 * 60 + Int32.Parse(r["test_m"].ToString()) * 60 + @";
+//alert(totalSeconds+'!!!1');
+}
+
+//alert(totalSeconds+'0');
+var timerVar = setInterval(countTimer, 1000);
+//alert(totalSeconds+'1');
+}
+
+
                                 function countTimer() {
-                                --totalSeconds;
+//alert(totalSeconds+'2');
+                                totalSeconds -= 1;
+//alert(totalSeconds+'3');
+createCookie('time" + Session["student_id"].ToString() + Session["company_id"].ToString() + @"',totalSeconds,1);
+//alert(totalSeconds+'4');
                                 if(totalSeconds==0){
                                 clearInterval(timerVar);
+createCookie('time" + Session["student_id"].ToString() + Session["company_id"].ToString() + @"',totalSeconds,-1);
+//alert(totalSeconds+'5');
                                 $('#complete_test_div').css('display', 'block');
                                 $('#questions_div').css('display', 'none');
                                 $('#submit_btn').click();
-                                }
-                                var hour = Math.floor(totalSeconds /3600);
-                                var minute = Math.floor((totalSeconds - hour*3600)/60);
-                                var seconds = totalSeconds - (hour*3600 + minute*60);
 
-                                document.getElementById('timer').innerHTML = hour + ':' + minute + ':' + seconds;
                                 }
+//alert(totalSeconds+'6');
+                                var hour = parseInt(totalSeconds/3600);
+//alert(totalSeconds+'7');
+                                var minute = parseInt((totalSeconds/60));
+//alert(totalSeconds+'8');
+                                var seconds = totalSeconds - (hour*3600 + minute*60);
+//alert(totalSeconds+'9');
+
+                                document.getElementById('timer').innerHTML = totalSeconds + ' '+hour + ':' + minute + ':' + seconds;
+//alert(totalSeconds+'10');
+                                }
+$(document).ready(function(){
+abcd();
+});
+
                                 </Script>";
         }
-
+       
         protected void submit_btn_Click(object sender, EventArgs e)
         {
             SqlConnection con = new SqlConnection();
