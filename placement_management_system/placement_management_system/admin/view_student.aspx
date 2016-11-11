@@ -37,6 +37,7 @@
         <li class="bold active"><a href="view_student.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">View Students Data</a></li>
         <li class="bold"><a href="edit_student.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">Edit Students Data</a></li>
         <li class="bold"><a href="view_company.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">View & Edit Company Data</a></li>
+        <li class="bold"><a href="change_password.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">Change Password</a></li>
         <li class="bold"><a href="logout.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">Logout</a></li>
     </ul>
 
