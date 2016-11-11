@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="student_logout.aspx.cs" Inherits="placement_management_system.student.student_logout" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="logout.aspx.cs" Inherits="placement_management_system.company.logout" %>
 
 <!DOCTYPE html>
 

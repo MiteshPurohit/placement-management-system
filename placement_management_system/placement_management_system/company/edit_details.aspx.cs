@@ -12,11 +12,16 @@ namespace placement_management_system.company
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            if (!string.IsNullOrEmpty(Session["company_id"] as string))
+            {
+                Response.Redirect("company_login.aspx", true);
+            }
             if (!IsPostBack)
             {
 
            
-            Session["company_id"] = "1";
+           
             SqlConnection con = new SqlConnection();
             con.ConnectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename='C:\Users\Sanket Bhimani\Source\Repos\placement-management-system\placement_management_system\placement_management_system\db\pmsdb.mdf';Integrated Security=True;Connect Timeout=30";
             con.Open();

@@ -12,7 +12,11 @@ namespace placement_management_system.company
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Session["company_id"] = "1";
+
+            if (!string.IsNullOrEmpty(Session["company_id"] as string))
+            {
+                Response.Redirect("company_login.aspx", true);
+            }
             SqlConnection con = new SqlConnection();
             con.ConnectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename='C:\Users\Sanket Bhimani\Source\Repos\placement-management-system\placement_management_system\placement_management_system\db\pmsdb.mdf';Integrated Security=True;Connect Timeout=30";
             con.Open();
@@ -49,8 +53,8 @@ namespace placement_management_system.company
                 start_test_div.Visible = false;
                 stop_test_div.Visible = false;
             }
-            
 
+            con.Close();
         }
         protected void start_test_click(object sender, EventArgs e)
         {
@@ -83,6 +87,7 @@ namespace placement_management_system.company
             start_test_div.Visible = true;
             stop_test_div.Visible = false;
             complete_shedule_div.Visible = false;
+
        
         }
        

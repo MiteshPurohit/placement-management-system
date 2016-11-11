@@ -11,7 +11,10 @@ namespace placement_management_system.admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!string.IsNullOrEmpty(Session["admin_id"] as string))
+            {
+                Response.Redirect("admin_login.aspx", true);
+            }
         }
     }
 }

@@ -20,12 +20,12 @@
             <span style="margin-left: 3%; font-size: 2em;" class="col s3">Placement Cell</span>
             <span style="align-self: center; font-size: 1.5em;" class="col s6">
                 <center>
-                    Hello, <asp:Label ID="name" runat="server" Text=""></asp:Label>
+                    Hello, <asp:Label ID="name" runat="server" Text="">Admin</asp:Label>
                 </center>
             </span>
 
             <ul id="nav" class="offset-s1 col s1">
-                <li class="right"><a href="student_logout.aspx">Logout</a></li>
+                <li class="right"><a href="logout.aspx">Logout</a></li>
             </ul>
         </div>
 
@@ -33,9 +33,10 @@
     <ul id="nav-mobile" class="side-nav fixed" style="height: 100%; width: 24%; transform: translateX(0px); border-right: solid thin #e0e0e0; transform: translateX(0px); margin: 0px 0px 0px 0px; padding-top: 5.35%;">
         <li class="bold"><a href="#" style="padding-left: 48px;" class="waves-effect waves-teal">Deshboard</a></li>
         <li class="bold"><a href="add_student.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">Add Student</a></li>
-        <li class="bold"><a href="view_student.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">View & Edit Students Data</a></li>
+        <li class="bold"><a href="view_student.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">View Students Data</a></li>        
+        <li class="bold"><a href="edit_student.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">Edit Students Data</a></li>
         <li class="bold active"><a href="view_company.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">View & Edit Company Data</a></li>
-        <li class="bold"><a href="student_logout.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">Logout</a></li>
+        <li class="bold"><a href="logout.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">Logout</a></li>
     </ul>
 
 

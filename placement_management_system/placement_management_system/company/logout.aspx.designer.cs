@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace placement_management_system.student
+namespace placement_management_system.company
 {
 
 
-    public partial class student_logout
+    public partial class logout
     {
 
         /// <summary>

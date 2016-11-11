@@ -12,6 +12,15 @@ namespace placement_management_system.student
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            if (!string.IsNullOrEmpty(Session["student_id"] as string))
+            {
+                Response.Redirect("student_login.aspx", true);
+            }
+            if (!Session["start_test"].ToString().Equals("true"))
+            {
+                Response.Redirect("select_company_for_test.aspx", true);
+            }
             SqlConnection con = new SqlConnection();
             con.ConnectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename='C:\Users\Sanket Bhimani\Source\Repos\placement-management-system\placement_management_system\placement_management_system\db\pmsdb.mdf';Integrated Security=True;MultipleActiveResultSets=True;Connect Timeout=30";
             con.Open();
@@ -60,6 +69,15 @@ namespace placement_management_system.student
                     }
                     r.Close();
                 }
+            SqlCommand ccmd = new SqlCommand();
+            ccmd.Connection = con;
+            ccmd.CommandText = "select COUNT(*) from student_test_data where student_id = '" + Session["student_id"] + "' and question_id in (select question_id from question_table where company_id = '" + Session["company_id"].ToString() + "') and true_false = 'True'";
+
+            int score = (int)ccmd.ExecuteScalar();
+            ccmd.CommandText = "update company_choice set written_test_marks = '" + score + "' where company_id = '" + Session["company_id"].ToString() + "' and student_id = '" + Session["student_id"] + "'";
+            ccmd.ExecuteNonQuery();
+            con.Close();
+            Session["company_id"] = null;
              Response.Redirect("test.aspx");
 
             

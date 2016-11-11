@@ -14,7 +14,15 @@ namespace placement_management_system.student
        
         protected void Page_Load(object sender, EventArgs e)
         {
-            Session["student_id"] = '1';
+            if (!string.IsNullOrEmpty(Session["student_id"] as string))
+            {
+                Response.Redirect("student_login.aspx", true);
+            }
+
+            if (!string.IsNullOrEmpty(Session["company_id"] as string))
+            {
+                Response.Redirect("select_company_for_test.aspx", true);
+            }
             
             SqlConnection con = new SqlConnection();
             con.ConnectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename='C:\Users\Sanket Bhimani\Source\Repos\placement-management-system\placement_management_system\placement_management_system\db\pmsdb.mdf';Integrated Security=True;MultipleActiveResultSets=True;Connect Timeout=30";
@@ -118,64 +126,10 @@ abcd();
 });
 
                                 </Script>";
+            Session["start_test"] = "true";
         }
        
-        protected void submit_btn_Click(object sender, EventArgs e)
-        {
-            SqlConnection con = new SqlConnection();
-            con.ConnectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename='C:\Users\Sanket Bhimani\Source\Repos\placement-management-system\placement_management_system\placement_management_system\db\pmsdb.mdf';Integrated Security=True;MultipleActiveResultSets=True;Connect Timeout=30";
-            con.Open();
-            SqlCommand c = new SqlCommand();
-            c.Connection = con;
-            c.CommandText = "update company_choice set written_test_given = 'true' where student_id = '" + Session["student_id"].ToString() + "' and company_id = '" + Request.QueryString["id"] + "'";
-            c.ExecuteNonQuery();
-            List<string> listkeys = new List<string>();
-            foreach (string key in Request.Form.AllKeys)
-            {
-
-                listkeys.Add(key);
-                
-            }
-            foreach (var key in listkeys )
-            {
-                string ans = (string)Request.Form[key];
-                
-                Console.Write(key);
-                SqlDataReader r;
-                try
-                {
-                    c.CommandText = "select * from question_table where question_id = '" + key + "'";
-                   r = c.ExecuteReader();
-                    r.Read();
-                
-                
-                if (r["choice_ans"].ToString().ToLower().Equals(ans.ToLower()))
-                {
-                    c.CommandText = "insert into student_test_data (question_id, student_id, mcq_choice, true_false) values('" + key + "', '" + Session["student_id"] + "','" + ans + "',true)";
-                    c.ExecuteNonQuery();
-                }
-                else
-                {
-                    c.CommandText = "insert into student_test_data (question_id, student_id, mcq_choice, true_false) values('" + key + "', '" + Session["student_id"] + "','" + ans + "',false)";
-                    c.ExecuteNonQuery();
-                }
-                r.Close();
-                    }
-                catch (Exception eee)
-                {
-                    name.Text = key;
-                }
-
-            }
-            SqlCommand cmd = new SqlCommand();
-            cmd.Connection = con;
-           
-            questions_div.Visible = false;
-            start_test_div.Visible = false;
-           // complete_test_div.Style.Add("display", "block");
-            test_given_div.Visible = true;
-        }
-
+       
       
     }
 }

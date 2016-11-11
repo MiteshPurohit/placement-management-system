@@ -13,7 +13,10 @@ namespace placement_management_system.student
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+            if (!string.IsNullOrEmpty(Session["student_id"] as string))
+            {
+                Response.Redirect("student_login.aspx", true);
+            }
             string id = Request.QueryString["id"];
             SqlConnection con = new SqlConnection();
             con.ConnectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename='C:\Users\Sanket Bhimani\Source\Repos\placement-management-system\placement_management_system\placement_management_system\db\pmsdb.mdf';Integrated Security=True;MultipleActiveResultSets=True;Connect Timeout=30";

@@ -13,11 +13,25 @@ namespace placement_management_system.company
         protected void Page_Load(object sender, EventArgs e)
         {
 
+            if (!string.IsNullOrEmpty(Session["company_id"] as string))
+            {
+                Response.Redirect("company_login.aspx", true);
+            }
+            SqlConnection con = new SqlConnection();
+            con.ConnectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename='C:\Users\Sanket Bhimani\Source\Repos\placement-management-system\placement_management_system\placement_management_system\db\pmsdb.mdf';Integrated Security=True;Connect Timeout=30";
+            con.Open();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = con;
+            cmd.CommandText = "SELECT * from company_table where company_id = '" + Session["company_id"].ToString() + "'";
+            SqlDataReader reader = cmd.ExecuteReader();
+            reader.Read();
+            name.Text = reader["company_name"].ToString();
+            con.Close();
         }
 
         protected void submit_Click(object sender, EventArgs e)
         {
-            Session["company_id"] = '1';
+           
             SqlConnection con = new SqlConnection();
             con.ConnectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename='C:\Users\Sanket Bhimani\Source\Repos\placement-management-system\placement_management_system\placement_management_system\db\pmsdb.mdf';Integrated Security=True;MultipleActiveResultSets=True;Connect Timeout=30";
             con.Open();

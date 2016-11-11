@@ -11,9 +11,11 @@ namespace placement_management_system.company
 {
     public partial class ragister_company : System.Web.UI.Page
     {
+
         String abcd;
         protected void Page_Load(object sender, EventArgs e)
         {
+
             if (!IsPostBack)
             {
                 hide_key.InnerHtml = "";

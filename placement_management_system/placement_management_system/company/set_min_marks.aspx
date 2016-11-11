@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="start_test.aspx.cs" Inherits="placement_management_system.company.start_test" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="set_min_marks.aspx.cs" Inherits="placement_management_system.company.set_max_marks" %>
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head runat="server">
@@ -32,8 +33,8 @@
         <li class="bold"><a href="add_question.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">Add Question</a></li>
         <li class="bold"><a href="view_question.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">View & Edit Question</a></li>
         <li class="bold"><a href="edit_details.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">View & edit details</a></li>
-         <li class="bold active"><a href="start_test.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">Start Test</a></li>  
-         <li class="bold"><a href="set_min_marks.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">Set minimum marks</a></li>
+         <li class="bold"><a href="start_test.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">Start Test</a></li>
+         <li class="bold active"><a href="set_min_marks.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">Set minimum marks</a></li>
         <li class="bold"><a href="set_schedule.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">Set Schedule</a></li>
         <li class="bold"><a href="view_students.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">View Students</a></li>
         <li class="bold"><a href="logout.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">Logout</a></li>
@@ -43,47 +44,19 @@
 
     <div style="margin-top: 6%; width: 100%; padding: 0px; position: absolute; padding-left: 24%;">
         <div class="grey lighten-4" style="width: 100%; padding-top: 4px; padding-bottom: 6px;">
-            <h4 class="center-align">Start Test</h4>
+            <h4 class="center-align">Set Minimum Marks to appear for interview</h4>
         </div>
         <div class="container" style="margin-top: 1%; margin-left: 9%; width: 90%;">
             <form runat="server">
-                <div runat="server" id="start_test_div">
-                    <div class="row">
-                        <div class="input-field" style="margin-left: 3%; margin-top: 7.5%;">
-                            <div class="col 3">
-                                <input id="htime" placeholder="hours"  runat="server" type="number" class="validate">
+                 <div class="row">
+                                <div class="input-field col s6">
+                                     <asp:TextBox ID="min_marks" name="min_marks" class="validate" runat="server" ></asp:TextBox>
+                                    <label for="min_marks">Mimimum marks for written test</label>
+                                </div>
+                     <div class="input-field col s6">
+                                      <asp:Button ID="set_marks" runat="server" class="waves-effect waves-light btn" Text="set" OnClick="set_marks_Click" />
+                                </div>
                             </div>
-                            <div class="col 1">
-                                <span style="font-size: 2.4em;">:</span>
-                            </div>
-                            <div class="col 3">
-                                <input id="mtime" placeholder="minutes" runat="server" type="number" class="validate">
-                            </div>
-                            <div class="col 4">
-                                <span style="font-size: 2.4em;">time</span>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div style="margin-left: 3%;">
-                        <asp:Button ID="start_test_btn" runat="server" class="waves-effect waves-light btn" OnClick="start_test_click" Text="start test" />
-
-                    </div>
-                </div>
-                <div runat="server" id="stop_test_div" style="padding: 3%;">
-                    <div class="row">
-                        <h3>Test is running click to stop now otherwise it will stop after specified time</h3>
-                    </div>
-                    <div style="margin-left: 3%;">
-                        <asp:Button ID="stop_test_btn" runat="server" class="waves-effect waves-light btn" OnClick="stop_test_click" Text="stop test" />
-                    </div>
-                </div>
-                <div runat="server" id="complete_shedule_div" style="padding: 3%;">
-                    <div class="row">
-                        <h3>First complete the shedule details first</h3>
-                    </div>
-
-                </div>
             </form>
         </div>
     </div>

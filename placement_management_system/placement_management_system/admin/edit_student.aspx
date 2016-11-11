@@ -1,5 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="view_student.aspx.cs" Inherits="placement_management_system.admin.view_student" %>
-
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="edit_student.aspx.cs" Inherits="placement_management_system.admin.WebForm1" %>
 
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -49,8 +48,10 @@
         <div class="container" style="margin-top: 1%; margin-left: 0%;">
             <form runat="server">
 
-                <asp:GridView CssClass="bordered highlight" ID="GridView2" runat="server" Style="min-width: 1500px;" AutoGenerateColumns="False" DataSourceID="student_data" AllowPaging="True" AllowSorting="True">
+                <asp:GridView CssClass="bordered highlight" ID="GridView2" runat="server" Style="min-width: 1500px;" AutoGenerateColumns="False" DataSourceID="student_data" AllowPaging="True" AllowSorting="True" DataKeyNames="student_id">
                     <Columns>
+                        <asp:CommandField ShowEditButton="True"></asp:CommandField>
+                        <asp:BoundField DataField="student_id" HeaderText="student id" SortExpression="student_id" InsertVisible="False" ReadOnly="True"></asp:BoundField>
                         <asp:BoundField DataField="collage_id" HeaderText="collage id" SortExpression="collage_id"></asp:BoundField>
                         <asp:BoundField DataField="email_id" HeaderText="email id" SortExpression="email_id"></asp:BoundField>
                         <asp:BoundField DataField="password" HeaderText="password" SortExpression="password"></asp:BoundField>
@@ -59,19 +60,43 @@
                         <asp:BoundField DataField="dob" HeaderText="dob" SortExpression="dob"></asp:BoundField>
                         <asp:BoundField DataField="cpi" HeaderText="cpi" SortExpression="cpi"></asp:BoundField>
                         <asp:BoundField DataField="full_name" HeaderText="full name" SortExpression="full_name"></asp:BoundField>
-                        <asp:BoundField DataField="selected" HeaderText="selected" SortExpression="selected"></asp:BoundField>
-                        <asp:BoundField DataField="written_test_given" HeaderText="written test given" SortExpression="written_test_given"></asp:BoundField>
-                        <asp:BoundField DataField="written_test_marks" HeaderText="written test marks" SortExpression="written_test_marks"></asp:BoundField>
-                        <asp:BoundField DataField="company_name" HeaderText="company name" SortExpression="company_name"></asp:BoundField>
-                         <asp:BoundField DataField="achievement" HeaderText="achievement" SortExpression="achievement"></asp:BoundField>
+                        <asp:BoundField DataField="achievement" HeaderText="achievement" SortExpression="achievement"></asp:BoundField>
                         <asp:BoundField DataField="skills" HeaderText="skills" SortExpression="skills"></asp:BoundField>
                     </Columns>
                 </asp:GridView>
 
 
-                <asp:SqlDataSource runat="server" ID="student_data" ConnectionString='<%$ ConnectionStrings:pmsdbConnectionString %>'  SelectCommand="SELECT student_table.collage_id, student_table.email_id, student_table.password, student_table.mobile_no, student_table.branch, student_table.dob, student_table.cpi, student_table.full_name, student_table.achievement, student_table.skills, company_choice.selected, company_choice.written_test_given, company_choice.written_test_marks, company_table.company_name FROM student_table INNER JOIN company_choice ON student_table.student_id = company_choice.student_id INNER JOIN company_table ON company_choice.company_id = company_table.company_id">
-                    
-                    
+                <asp:SqlDataSource runat="server" ID="student_data" ConnectionString='<%$ ConnectionStrings:pmsdbConnectionString %>' SelectCommand="SELECT [student_id], [collage_id], [email_id], [password], [mobile_no], [branch], [dob], [cpi], [full_name], [achievement], [skills] FROM [student_table]" DeleteCommand="DELETE FROM [student_table] WHERE [student_id] = @student_id" InsertCommand="INSERT INTO [student_table] ([collage_id], [email_id], [password], [mobile_no], [branch], [dob], [cpi], [full_name], [achievement], [skills]) VALUES (@collage_id, @email_id, @password, @mobile_no, @branch, @dob, @cpi, @full_name, @achievement, @skills)" UpdateCommand="UPDATE [student_table] SET [collage_id] = @collage_id, [email_id] = @email_id, [password] = @password, [mobile_no] = @mobile_no, [branch] = @branch, [dob] = @dob, [cpi] = @cpi, [full_name] = @full_name, [achievement] = @achievement, [skills] = @skills WHERE [student_id] = @student_id">
+
+
+                    <DeleteParameters>
+                        <asp:Parameter Name="student_id" Type="Int32"></asp:Parameter>
+                    </DeleteParameters>
+                    <InsertParameters>
+                        <asp:Parameter Name="collage_id" Type="String"></asp:Parameter>
+                        <asp:Parameter Name="email_id" Type="String"></asp:Parameter>
+                        <asp:Parameter Name="password" Type="String"></asp:Parameter>
+                        <asp:Parameter Name="mobile_no" Type="String"></asp:Parameter>
+                        <asp:Parameter Name="branch" Type="String"></asp:Parameter>
+                        <asp:Parameter Name="dob" Type="String"></asp:Parameter>
+                        <asp:Parameter Name="cpi" Type="Decimal"></asp:Parameter>
+                        <asp:Parameter Name="full_name" Type="String"></asp:Parameter>
+                        <asp:Parameter Name="achievement" Type="String"></asp:Parameter>
+                        <asp:Parameter Name="skills" Type="String"></asp:Parameter>
+                    </InsertParameters>
+                    <UpdateParameters>
+                        <asp:Parameter Name="collage_id" Type="String"></asp:Parameter>
+                        <asp:Parameter Name="email_id" Type="String"></asp:Parameter>
+                        <asp:Parameter Name="password" Type="String"></asp:Parameter>
+                        <asp:Parameter Name="mobile_no" Type="String"></asp:Parameter>
+                        <asp:Parameter Name="branch" Type="String"></asp:Parameter>
+                        <asp:Parameter Name="dob" Type="String"></asp:Parameter>
+                        <asp:Parameter Name="cpi" Type="Decimal"></asp:Parameter>
+                        <asp:Parameter Name="full_name" Type="String"></asp:Parameter>
+                        <asp:Parameter Name="achievement" Type="String"></asp:Parameter>
+                        <asp:Parameter Name="skills" Type="String"></asp:Parameter>
+                        <asp:Parameter Name="student_id" Type="Int32"></asp:Parameter>
+                    </UpdateParameters>
                 </asp:SqlDataSource>
 
 
@@ -84,3 +109,4 @@
     </div>
 </body>
 </html>
+

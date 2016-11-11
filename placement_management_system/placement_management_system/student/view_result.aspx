@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="view_company.aspx.cs" Inherits="placement_management_system.student.view_company" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="view_result.aspx.cs" Inherits="placement_management_system.student.view_result" %>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 
@@ -32,9 +32,9 @@
         <li class="bold"><a href="#" style="padding-left:48px;" class="waves-effect waves-teal">Deshboard</a></li>
         <li class="bold"><a href="select_company_for_test.aspx" style="padding-left:48px;" class="waves-effect waves-teal">Written test</a></li>
         <li class="bold"><a href="student_add_details.aspx" style="padding-left:48px;" class="waves-effect waves-teal">View & edit details</a></li>
-        <li class="bold active"><a href="view_company.aspx" style="padding-left:48px;" class="waves-effect waves-teal">View companies</a></li>
+        <li class="bold"><a href="view_company.aspx" style="padding-left:48px;" class="waves-effect waves-teal">View companies</a></li>
         <li class="bold"><a href="select_company.aspx" style="padding-left:48px;" class="waves-effect waves-teal">Select intrested companies</a></li>
-        <li class="bold"><a href="view_result.aspx" style="padding-left:48px;" class="waves-effect waves-teal">View test result</a></li>
+        <li class="bold active"><a href="view_result.aspx" style="padding-left:48px;" class="waves-effect waves-teal">View test result</a></li>
         <li class="bold"><a href="logout.aspx" style="padding-left:48px;" class="waves-effect waves-teal">Logout</a></li>
     </ul>
 
@@ -45,12 +45,23 @@
         </div>
          <div class="container" style=" margin-top:1%; margin-left:9%; width:90%; max-width:600px;">
         
-        <div class="collection" runat="server" id="list">
-        
-      </div>
+             <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="result_data">
+                 <Columns>
+                     <asp:BoundField DataField="company_id" HeaderText="company id" SortExpression="company_id"></asp:BoundField>
+                     <asp:BoundField DataField="company_name" HeaderText="company name" SortExpression="company_name"></asp:BoundField>
+                     <asp:CheckBoxField DataField="selected" HeaderText="selected for PI" SortExpression="selected"></asp:CheckBoxField>
+                     <asp:CheckBoxField DataField="written_test_given" HeaderText="written test given" SortExpression="written_test_given"></asp:CheckBoxField>
+                     <asp:BoundField DataField="written_test_marks" HeaderText="written test marks" SortExpression="written_test_marks"></asp:BoundField>
+                 </Columns>
+             </asp:GridView>
 
 
-</div>
+             <asp:SqlDataSource runat="server" ID="result_data" ConnectionString='<%$ ConnectionStrings:pmsdbConnectionString %>' SelectCommand="SELECT company_choice.company_id, company_table.company_name, company_choice.selected, company_choice.written_test_given, company_choice.written_test_marks FROM company_choice INNER JOIN company_table ON company_choice.company_id = company_table.company_id where student_id='@student_id'">
+                  <SelectParameters>
+                        <asp:SessionParameter SessionField="student_id" DefaultValue="1" Name="student_id" Type="Int32"></asp:SessionParameter>
+                    </SelectParameters>
+             </asp:SqlDataSource>
+         </div>
             
     </div>
  </body>
