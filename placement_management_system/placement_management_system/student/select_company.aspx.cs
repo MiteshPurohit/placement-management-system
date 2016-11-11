@@ -13,7 +13,7 @@ namespace placement_management_system.student
     {
         protected void Page_PreRender(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(Session["student_id"] as string))
+            if (string.IsNullOrEmpty(Session["student_id"] as string))
             {
                 Response.Redirect("student_login.aspx", true);
             }

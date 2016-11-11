@@ -11,7 +11,7 @@ namespace placement_management_system.company
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(Session["company_id"] as string))
+            if (string.IsNullOrEmpty(Session["company_id"] as string))
             {
                 Response.Redirect("company_login.aspx", true);
             }

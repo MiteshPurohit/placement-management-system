@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="student_login.aspx.cs" Inherits="placement_management_system.student_login" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="forget_pass.aspx.cs" Inherits="placement_management_system.student.forget_pass" %>
 
 <!DOCTYPE html>
 
@@ -12,6 +12,7 @@
     <title></title>
 </head>
 <body>
+    <div runat="server" id="alert"></div>
     <nav>
         <div class="nav-wrapper">
 
@@ -27,31 +28,27 @@
 
     </nav>
     <div class="container">
-        <h3 class="center" style="margin-top: 30px;">Student Login</h3>
+        <h3 class="center" style="margin-top: 30px;">Student Password Recover</h3>
         <div class="row" style="margin-top: 30px;">
             <div class="offset-s3 col s6">
                 <form runat="server">
                     <div class="row">
                         <div class="input-field col s12">
-                            <asp:TextBox runat="server" ID="clg_id" class="validate" />
-                            <label for="first_name">Collage ID</label>
-                        </div>
-                        <div class="input-field col s12">
-                            <asp:TextBox runat="server" ID="pass" TextMode="Password" class="validate" />
-                            <label for="first_name">Password</label>
-                        </div>
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <a href="forget_pass.aspx">Forget password? click here to recover</a>
-                            </div>
-                        </div>
-                        <div class="input-field col s12">
-                            <asp:Button runat="server" ID="login_btn" class="btn waves-effect waves-light" Text="Login" OnClick="login_btn_click" />
-
+                            <asp:TextBox runat="server" ID="student_id" class="validate" />
+                            <label for="first_name">Enter Email Address</label>
                         </div>
                     </div>
+                   
+
+                    <div class="input-field col s12">
+                        <asp:Button runat="server" ID="recover_pass" class="btn waves-effect waves-light" Text="send password" OnClick="send_password" />
+
+                    </div>
+
+
                 </form>
             </div>
+
         </div>
     </div>
 </body>

@@ -14,12 +14,12 @@ namespace placement_management_system.student
        
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(Session["student_id"] as string))
+            if (string.IsNullOrEmpty(Session["student_id"] as string))
             {
                 Response.Redirect("student_login.aspx", true);
             }
 
-            if (!string.IsNullOrEmpty(Session["company_id"] as string))
+            if (string.IsNullOrEmpty(Session["company_id"] as string))
             {
                 Response.Redirect("select_company_for_test.aspx", true);
             }

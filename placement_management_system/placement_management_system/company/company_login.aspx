@@ -43,8 +43,12 @@
                             <label for="first_name">Password</label>
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <a href="forget_pass.aspx">Forget password? click here to recover</a>
 
-
+                        </div>
+                    </div>
                     <div class="input-field col s12">
                         <asp:Button runat="server" ID="login_btn" class="btn waves-effect waves-light" Text="Login" OnClick="login_btn_click" />
 

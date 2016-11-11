@@ -79,6 +79,7 @@
     <Content Include="company\company_home.aspx" />
     <Content Include="company\company_login.aspx" />
     <Content Include="company\edit_details.aspx" />
+    <Content Include="company\forget_pass.aspx" />
     <Content Include="company\logout.aspx" />
     <Content Include="company\ragister_company.aspx" />
     <Content Include="company\set_min_marks.aspx" />
@@ -87,6 +88,7 @@
     <Content Include="company\view_question.aspx" />
     <Content Include="company\view_students.aspx" />
     <Content Include="student\change_password.aspx" />
+    <Content Include="student\forget_pass.aspx" />
     <Content Include="student\logout.aspx" />
     <Content Include="student\select_company.aspx" />
     <Content Include="student\select_company_for_test.aspx" />
@@ -193,6 +195,13 @@
     <Compile Include="company\edit_details.aspx.designer.cs">
       <DependentUpon>edit_details.aspx</DependentUpon>
     </Compile>
+    <Compile Include="company\forget_pass.aspx.cs">
+      <DependentUpon>forget_pass.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="company\forget_pass.aspx.designer.cs">
+      <DependentUpon>forget_pass.aspx</DependentUpon>
+    </Compile>
     <Compile Include="company\logout.aspx.cs">
       <DependentUpon>logout.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -249,6 +258,13 @@
     </Compile>
     <Compile Include="student\change_password.aspx.designer.cs">
       <DependentUpon>change_password.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="student\forget_pass.aspx.cs">
+      <DependentUpon>forget_pass.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="student\forget_pass.aspx.designer.cs">
+      <DependentUpon>forget_pass.aspx</DependentUpon>
     </Compile>
     <Compile Include="student\logout.aspx.cs">
       <DependentUpon>logout.aspx</DependentUpon>
