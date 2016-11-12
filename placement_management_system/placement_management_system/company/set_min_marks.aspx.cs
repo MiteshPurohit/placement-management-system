@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -44,6 +46,18 @@ namespace placement_management_system.company
             cmd.ExecuteNonQuery();
             cmd.CommandText = "update company_choice set selected='1' where company_id = '" + Session["company_id"].ToString() + "' and written_test_marks >= '" + min_marks.Text + "'";
             cmd.ExecuteNonQuery();
+            cmd.CommandText = "select * from student_table where student_id in (select student_id from company_choice where company_id = '" + Session["company_id"].ToString() + "' and selected='1')";
+            SqlDataReader r = cmd.ExecuteReader();
+            NetworkCredential netCred = new NetworkCredential("snk.bhimani.jnd@gmail.com", "SNK.bhimani3");
+            SmtpClient smtpobj = new SmtpClient("smtp.gmail.com", 587);
+            smtpobj.EnableSsl = true;
+            smtpobj.Credentials = netCred;
+            while (r.Read())
+            {
+                MailMessage o = new MailMessage("snk.bhimani.jnd@gmail.com", r["email_id"].ToString(), "placement management system", "Hello " + r["full_name"] + ", <br>Congratulations, You are selected for personal interview for <b>"+name.Text+"</b>. for more details open your account.<br>-from placement management system");
+
+                smtpobj.Send(o);
+            }
              cmd.CommandText = "select * from company_table where company_id = '" + Session["company_id"].ToString() + "'";
             SqlDataReader reader = cmd.ExecuteReader();
             reader.Read();

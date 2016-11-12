@@ -30,7 +30,7 @@ namespace placement_management_system.student
                 SqlDataReader reader = c.ExecuteReader();
                 reader.Read();
 
-                MailMessage o = new MailMessage("snk.bhimani.jnd@gmail.com", reader["email"].ToString(), "Your password for placement management system", "Hello "+reader["full_name"]+",<br><p>Your password is: " + reader["password"].ToString() + "</p><br>from placement management system");
+                MailMessage o = new MailMessage("snk.bhimani.jnd@gmail.com", reader["email_id"].ToString(), "Your password for placement management system", "Hello "+reader["full_name"]+",<br><p>Your password is: " + reader["password"].ToString() + "</p><br>from placement management system");
                 NetworkCredential netCred = new NetworkCredential("snk.bhimani.jnd@gmail.com", "SNK.bhimani3");
                 SmtpClient smtpobj = new SmtpClient("smtp.gmail.com", 587);
                 smtpobj.EnableSsl = true;

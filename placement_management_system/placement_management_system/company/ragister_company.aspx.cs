@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -64,13 +66,27 @@ namespace placement_management_system.company
                 con.Open();
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = con;
-                cmd.CommandText = "INSERT INTO company_table (company_name, description, other_details, required_min_cpi, job_post, job_location, tentative_salary, email, phone, password) values ('" + _name + "','" + _description + "','" + _other_details + "','" + _min_cpi + "','" + _job_post + "','" + _job_location + "','" + _job_salary + "','" + _email + "','" + _phone + "','" + _password + "')";
+                cmd.CommandText = "INSERT INTO company_table (company_name, description, other_details, required_min_cpi, job_post, job_location, tentative_salary, email, phone, password,required_branches) values ('" + _name + "','" + _description + "','" + _other_details + "','" + _min_cpi + "','" + _job_post + "','" + _job_location + "','" + _job_salary + "','" + _email + "','" + _phone + "','" + _password + "', '"+selected_branches+"')";
                 cmd.ExecuteNonQuery();
                 con.Close();
                 company_id.Text = _email;
                 company_password.Text = _password;
                 reg_form.Visible = false;
                 after_reg.Visible = true;
+                cmd.Connection = con;
+                cmd.CommandText = "select * from student_table where cpi >= '"+_min_cpi+"'";
+                SqlDataReader reader = cmd.ExecuteReader();
+                NetworkCredential netCred = new NetworkCredential("snk.bhimani.jnd@gmail.com", "SNK.bhimani3");
+                SmtpClient smtpobj = new SmtpClient("smtp.gmail.com", 587);
+                smtpobj.EnableSsl = true;
+                smtpobj.Credentials = netCred;
+                while (reader.Read())
+                {
+                    MailMessage o = new MailMessage("snk.bhimani.jnd@gmail.com", reader["email_id"].ToString(), "placement management system", "Hello " + reader["full_name"] + ", <br><b>" + _name + "</b> company has registered in this system kaindly visit and find select if intrested if your branch is one of these: " + selected_branches + ".<br>-from placement management system");
+
+                    smtpobj.Send(o);
+                }
+               
             }
             else
             {
