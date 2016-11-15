@@ -69,6 +69,7 @@
     <Content Include="admin\admin_login.aspx" />
     <Content Include="admin\admin.xml" />
     <Content Include="admin\change_password.aspx" />
+    <Content Include="admin\dashboard.aspx" />
     <Content Include="admin\logout.aspx" />
     <Content Include="admin\reset_system.aspx" />
     <Content Include="admin\view_company.aspx" />
@@ -78,6 +79,7 @@
     <Content Include="company\change_password.aspx" />
     <Content Include="company\company_home.aspx" />
     <Content Include="company\company_login.aspx" />
+    <Content Include="company\dashboard.aspx" />
     <Content Include="company\edit_details.aspx" />
     <Content Include="company\forget_pass.aspx" />
     <Content Include="company\logout.aspx" />
@@ -87,7 +89,9 @@
     <Content Include="company\start_test.aspx" />
     <Content Include="company\view_question.aspx" />
     <Content Include="company\view_students.aspx" />
+    <Content Include="error.aspx" />
     <Content Include="student\change_password.aspx" />
+    <Content Include="student\dashboard.aspx" />
     <Content Include="student\forget_pass.aspx" />
     <Content Include="student\logout.aspx" />
     <Content Include="student\select_company.aspx" />
@@ -124,6 +128,13 @@
     </Compile>
     <Compile Include="admin\change_password.aspx.designer.cs">
       <DependentUpon>change_password.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\dashboard.aspx.cs">
+      <DependentUpon>dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\dashboard.aspx.designer.cs">
+      <DependentUpon>dashboard.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\logout.aspx.cs">
       <DependentUpon>logout.aspx</DependentUpon>
@@ -188,6 +199,13 @@
     <Compile Include="company\company_login.aspx.designer.cs">
       <DependentUpon>company_login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="company\dashboard.aspx.cs">
+      <DependentUpon>dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="company\dashboard.aspx.designer.cs">
+      <DependentUpon>dashboard.aspx</DependentUpon>
+    </Compile>
     <Compile Include="company\edit_details.aspx.cs">
       <DependentUpon>edit_details.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -251,6 +269,13 @@
     <Compile Include="company\view_students.aspx.designer.cs">
       <DependentUpon>view_students.aspx</DependentUpon>
     </Compile>
+    <Compile Include="error.aspx.cs">
+      <DependentUpon>error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="error.aspx.designer.cs">
+      <DependentUpon>error.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="student\change_password.aspx.cs">
       <DependentUpon>change_password.aspx</DependentUpon>
@@ -258,6 +283,13 @@
     </Compile>
     <Compile Include="student\change_password.aspx.designer.cs">
       <DependentUpon>change_password.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="student\dashboard.aspx.cs">
+      <DependentUpon>dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="student\dashboard.aspx.designer.cs">
+      <DependentUpon>dashboard.aspx</DependentUpon>
     </Compile>
     <Compile Include="student\forget_pass.aspx.cs">
       <DependentUpon>forget_pass.aspx</DependentUpon>

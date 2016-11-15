@@ -10,7 +10,7 @@
     <title></title>
 </head>
 <body>
-
+    <div runat="server" id="alert"></div>
     <nav style="position: fixed; z-index: 1000;" class="red lighten-1">
         <div class="nav-wrapper row">
 
@@ -28,7 +28,7 @@
 
     </nav>
     <ul id="nav-mobile" class="side-nav fixed" style="height: 100%; width: 24%; transform: translateX(0px); border-right: solid thin #e0e0e0; transform: translateX(0px); margin: 0px 0px 0px 0px; padding-top: 5.35%;">
-        <li class="bold"><a href="#" style="padding-left: 48px;" class="waves-effect waves-teal">Deshboard</a></li>
+        <li class="bold"><a href="dashboard.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">Dashboard</a></li>
         <li class="bold"><a href="add_question.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">Add Question</a></li>
         <li class="bold"><a href="view_question.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">View & Edit Question</a></li>
         <li class="bold"><a href="edit_details.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">View & edit details</a></li>
@@ -73,7 +73,7 @@
                 </div>
                 <div runat="server" id="stop_test_div" style="padding: 3%;">
                     <div class="row">
-                        <h3>Test is running click to stop now otherwise it will stop after specified time</h3>
+                        <h4>Test is running click to stop.</h4>
                     </div>
                     <div style="margin-left: 3%;">
                         <asp:Button ID="stop_test_btn" runat="server" class="waves-effect waves-light btn" OnClick="stop_test_click" Text="stop test" />

@@ -15,10 +15,16 @@ namespace placement_management_system
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(Session["admin_id"] as string))
+            if (Session["admin_id"] == null)
             {
                 Response.Redirect("admin_login.aspx", true);
             }
+            fname.Text = "";
+            cpi.Text = "";
+            birthdate.Text = "";
+            password.Text = "";
+            collage_id.Text = "";
+            branch.SelectedIndex = 0;
         }
 
         protected void submit_Click(object sender, EventArgs e)
@@ -77,7 +83,7 @@ namespace placement_management_system
                     catch (Exception eee)
                     {
                         script.InnerHtml = @"<script>
-                                            alert('Invalid input file. try again :|');
+                                            alert('Invalid input file. try again :| or one  of the  student already exists');
                                         </script>";
                     }
 

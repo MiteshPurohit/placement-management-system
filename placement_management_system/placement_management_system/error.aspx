@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="admin_login.aspx.cs" Inherits="placement_management_system.admin_login" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="error.aspx.cs" Inherits="placement_management_system.error" %>
+
 
 <!DOCTYPE html>
 
@@ -13,7 +14,6 @@
         <title></title>
     </head>
 <body>
-    <div runat="server" id="alert"></div>
     <nav class="red lighten-1">
     <div class="nav-wrapper">
          
@@ -29,24 +29,12 @@
 
     </nav>
     <div class="container">
-        <h3 class="center" style="margin-top:30px;">Admin Login</h3>
+        
         <div class="row" style="margin-top:30px;">
             <div class="offset-s3 col s6">
             <form runat="server">
-                <div class="row">
-                    <div class="input-field col s12">
-                        <asp:textbox runat="server" id="admin_username" class="validate"/>
-                        <label for="first_name">Username</label>
-                    </div>
-                    <div class="input-field col s12">
-                        <asp:textbox runat="server" id="pass" Textmode="Password" class="validate"/>
-                        <label for="first_name">Password</label>
-                    </div>
-                     <div class="input-field col s12">
-                    <asp:button runat="server" ID="login_btn" class="btn waves-effect waves-light" text="Login" OnClick="login_btn_click"/>
-
-                     </div>
-                </div>
+                <h3>Probably Invalid Input</h3>
+                <h6>Go back and change inputs</h6>
             </form>
                 </div>
         </div>

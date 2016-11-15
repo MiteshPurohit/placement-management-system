@@ -30,7 +30,7 @@
 
     </nav>
      <ul id="nav-mobile" class="side-nav fixed" style="height:100%; width:24%; transform: translateX(0px); border-right:solid thin #e0e0e0; transform: translateX(0px); margin:0px 0px 0px 0px; padding-top:5.35%;">
-       <li class="bold"><a href="#" style="padding-left: 48px;" class="waves-effect waves-teal">Deshboard</a></li>
+       <li class="bold"><a href="dashboard.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">Dashboard</a></li>
         <li class="bold active"><a href="add_question.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">Add Question</a></li>
         <li class="bold"><a href="view_question.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">View & Edit Question</a></li>
         <li class="bold"><a href="edit_details.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">View & edit details</a></li>
@@ -46,7 +46,7 @@
    
      <div style="margin-top:6%; width:100%; padding: 0px; position:absolute; padding-left:24%;">
         <div class="grey lighten-4" style="width:100%; padding-top:4px; padding-bottom:6px;">
-            <h4 class="center-align">Select Intrested Companies</h4>
+            <h4 class="center-align">Add Questions</h4>
         </div>
          <div class="container" style=" margin-top:1%; margin-left:9%; width:90%; max-width:600px;">
              <form runat="server">
@@ -54,7 +54,7 @@
                  <div class="row">
         <div class="input-field col s12">
           <textarea id="question" runat="server" class="materialize-textarea"></textarea>
-          <label for="question">Question defination</label>
+          <label for="question">Question</label>
         </div>
                      </div>
                      <div class="row">
@@ -100,12 +100,6 @@
   </div>
                          </div>
 
-                      <div class="row">
-        <div class="input-field col s12">
-          <input id="weight" type="number" runat="server" value="1" class="validate">
-          <label for="weight">Weight of question</label>
-        </div>
-      </div>
 
                      <div class="row">
         <div class="input-field col s12">

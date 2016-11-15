@@ -11,10 +11,17 @@ namespace placement_management_system.admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(Session["admin_id"] as string))
+            if (Session["admin_id"] == null)
             {
                 Response.Redirect("admin_login.aspx", true);
             }
+        }
+
+       
+        private void Page_Error(object sender, EventArgs e)
+        {
+            alert.InnerHtml = "<script>Invalid details entered</script>";
+            Server.TransferRequest("../error.aspx");
         }
     }
 }

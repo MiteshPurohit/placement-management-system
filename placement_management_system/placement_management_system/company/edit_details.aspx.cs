@@ -13,7 +13,7 @@ namespace placement_management_system.company
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            if (string.IsNullOrEmpty(Session["company_id"] as string))
+            if (Session["company_id"] == null)
             {
                 Response.Redirect("company_login.aspx", true);
             }
@@ -59,7 +59,14 @@ namespace placement_management_system.company
             cmd.Connection = con;
             cmd.CommandText = "UPDATE company_table set other_details='" + other_details.Text.ToString() + "',job_post='" + job_post.Text.ToString() + "',job_location='" + job_location.Text.ToString() + "',tentative_salary='" + job_salary.Text.ToString() + "',company_name='" + cname.Text.ToString() + "', required_branches = '" + branch.Text.ToString().ToUpper() + "', description = '" + description.Text.ToString() + "', phone = '" + phone.Text.ToString() + "', required_min_cpi = '" + min_cpi.Text.ToString() + "', email = '" + email.Text.ToString() + "' where company_id = '" + id + "'";
             name.Text = cmd.CommandText;
-            cmd.ExecuteNonQuery();
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch(Exception eeee)
+            {
+                Response.Redirect("../error.aspx", true);
+            }
             SqlCommand cmd1 = new SqlCommand();
             cmd1.Connection = con;
             cmd1.CommandText = "SELECT * from company_table where company_id = '" + Session["company_id"].ToString() + "'";

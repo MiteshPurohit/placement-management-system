@@ -28,12 +28,12 @@
 
     </nav>
     <ul id="nav-mobile" class="side-nav fixed" style="height: 100%; width: 24%; transform: translateX(0px); border-right: solid thin #e0e0e0; transform: translateX(0px); margin: 0px 0px 0px 0px; padding-top: 5.35%;">
-        <li class="bold"><a href="#" style="padding-left: 48px;" class="waves-effect waves-teal">Deshboard</a></li>
+       <li class="bold"><a href="dashboard.aspx" style="padding-left:48px;" class="waves-effect waves-teal">Deshboard</a></li>
         <li class="bold active"><a href="select_company_for_test.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">Written test</a></li>
         <li class="bold"><a href="student_add_details.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">View & edit details</a></li>
         <li class="bold"><a href="view_company.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">View companies</a></li>
         <li class="bold"><a href="select_company.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">Select intrested companies</a></li>
-        <li class="bold"><a href="view_result.aspx" style="padding-left:48px;" class="waves-effect waves-teal">View test result</a></li>
+        <li class="bold"><a href="view_result.aspx" style="padding-left:48px;" class="waves-effect waves-teal">View result</a></li>
         <li class="bold"><a href="change_password.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">Change Password</a></li>
         <li class="bold"><a href="logout.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">Logout</a></li>
     </ul>
@@ -58,7 +58,7 @@
                 <h4>Your score is: <span id="score" runat="server"></span></h4>
             </div>
             <div runat="server" id="questions_div" style="padding-top: 9%; padding-left: 3%;">
-                <div style="float: right; right: 1%; top: 15%; position: fixed; font-size: 3em;" id="timer">
+                <div style="float: right; right: 1%; top: 15%; position: fixed; font-size: 2em;" id="timer">
                 </div>
                 <script>
                     function createCookie(name, value, days) {
@@ -140,12 +140,11 @@
 
                             </ItemTemplate>
                         </asp:TemplateField>
-                        <asp:BoundField DataField="weight" HeaderText="Weight" SortExpression="weight"></asp:BoundField>
                     </Columns>
                 </asp:GridView>
                 <input runat="server" id="company_id" type="hidden" name="id" />
                 <asp:Button ID="submit_btn" runat="server" Text="submit" class="waves-effect waves-light btn" Style="margin-top: 3%; top: 0px; left: 0px;" PostBackUrl="write_question.aspx" />
-                <asp:SqlDataSource runat="server" ID="question_db" ConnectionString='<%$ ConnectionStrings:pmsdbConnectionString %>' SelectCommand="SELECT [question], [option_a], [option_b], [option_c], [option_d], [weight], [question_id] FROM [question_table] WHERE ([company_id] = @company_id)">
+                <asp:SqlDataSource runat="server" ID="question_db" ConnectionString='<%$ ConnectionStrings:pmsdbConnectionString %>' SelectCommand="SELECT [question], [option_a], [option_b], [option_c], [option_d], [question_id] FROM [question_table] WHERE ([company_id] = @company_id)">
                     <SelectParameters>
                         <asp:SessionParameter SessionField="company_id" DefaultValue="1" Name="company_id" Type="Int32"></asp:SessionParameter>
                     </SelectParameters>

@@ -13,6 +13,7 @@
     <title></title>
 </head>
 <body>
+    <div runat="server" id="alert"></div>
     <nav style="position: fixed; z-index: 1000;" class="red lighten-1">
         <div class="nav-wrapper row">
 

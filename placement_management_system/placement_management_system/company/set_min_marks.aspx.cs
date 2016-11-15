@@ -15,7 +15,7 @@ namespace placement_management_system.company
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            if (string.IsNullOrEmpty(Session["company_id"] as string))
+            if (Session["company_id"] == null)
             {
                 Response.Redirect("company_login.aspx", true);
             }
@@ -54,15 +54,25 @@ namespace placement_management_system.company
             smtpobj.Credentials = netCred;
             while (r.Read())
             {
-                MailMessage o = new MailMessage("snk.bhimani.jnd@gmail.com", r["email_id"].ToString(), "placement management system", "Hello " + r["full_name"] + ", <br>Congratulations, You are selected for personal interview for <b>"+name.Text+"</b>. for more details open your account.<br>-from placement management system");
+                if (r["email_id"].ToString() != null)
+                {
+                    MailMessage o = new MailMessage("snk.bhimani.jnd@gmail.com", r["email_id"].ToString(), "placement management system", "Hello " + r["full_name"] + ", <br>Congratulations, You are selected for personal interview for <b>" + name.Text + "</b>. for more details open your account.<br>-from placement management system");
 
-                smtpobj.Send(o);
+                    smtpobj.Send(o);
+                }
             }
-             cmd.CommandText = "select * from company_table where company_id = '" + Session["company_id"].ToString() + "'";
-            SqlDataReader reader = cmd.ExecuteReader();
+            r.Close();
+            con.Close();
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename='C:\Users\Sanket Bhimani\Source\Repos\placement-management-system\placement_management_system\placement_management_system\db\pmsdb.mdf';Integrated Security=True;Connect Timeout=30";
+            conn.Open();
+            SqlCommand sanket = new SqlCommand();
+            sanket.Connection = conn;
+             sanket.CommandText = "select * from company_table where company_id = '" + Session["company_id"].ToString() + "'";
+            SqlDataReader reader = sanket.ExecuteReader();
             reader.Read();
                 min_marks.Text = reader["min_marks"].ToString();
-            con.Close();
+            
         }
     }
 }

@@ -13,7 +13,7 @@ namespace placement_management_system.company
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            if (string.IsNullOrEmpty(Session["company_id"] as string))
+            if (Session["company_id"] == null)
             {
                 Response.Redirect("company_login.aspx", true);
             }
@@ -40,15 +40,23 @@ namespace placement_management_system.company
             String c = optc.Value.ToString();
             String d = optd.Value.ToString();
             String answer = ans.Value.ToString();
-            String w = weight.Value.ToString();
+            
 
             SqlConnection con = new SqlConnection();
             con.ConnectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename='C:\Users\Sanket Bhimani\Source\Repos\placement-management-system\placement_management_system\placement_management_system\db\pmsdb.mdf';Integrated Security=True;MultipleActiveResultSets=True;Connect Timeout=30";
             con.Open();
             SqlCommand ccmd = new SqlCommand();
             ccmd.Connection = con;
-            ccmd.CommandText = "INSERT INTO question_table (question,option_a,option_b,option_c,option_d,choice_ans,company_id,weight) values('" + q + "','" + a + "','" + b + "','" + c + "','" + d + "','" + answer + "','" + id + "','" + w + "')";
-            ccmd.ExecuteNonQuery();
+            ccmd.CommandText = "INSERT INTO question_table (question,option_a,option_b,option_c,option_d,choice_ans,company_id) values('" + q + "','" + a + "','" + b + "','" + c + "','" + d + "','" + answer + "','" + id + "')";
+            try
+            {
+                ccmd.ExecuteNonQuery();
+            }
+            catch (Exception eee)
+            {
+                Response.Redirect("../error.aspx", true);
+            }
+            
             alert.InnerHtml = "<script>alert('Question added');</script>";
             con.Close();
             question.Value = "";
@@ -57,7 +65,7 @@ namespace placement_management_system.company
             optc.Value = "";
             optd.Value = "";
             ans.SelectedIndex = 0;
-            weight.Value = "";
+           
         }
     }
 }

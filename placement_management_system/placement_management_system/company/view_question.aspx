@@ -31,7 +31,7 @@
 
     </nav>
     <ul id="nav-mobile" class="side-nav fixed" style="height: 100%; width: 24%; transform: translateX(0px); border-right: solid thin #e0e0e0; transform: translateX(0px); margin: 0px 0px 0px 0px; padding-top: 5.35%;">
-        <li class="bold"><a href="#" style="padding-left: 48px;" class="waves-effect waves-teal">Deshboard</a></li>
+         <li class="bold"><a href="dashboard.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">Dashboard</a></li>
         <li class="bold"><a href="add_question.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">Add Question</a></li>
         <li class="bold active"><a href="view_question.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">View & Edit Question</a></li>
         <li class="bold"><a href="edit_details.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">View & edit details</a></li>
@@ -119,7 +119,7 @@
                         </asp:TemplateField>
 
                         <asp:BoundField DataField="choice_ans" HeaderText="Answer" SortExpression="choice_ans"></asp:BoundField>
-                        <asp:BoundField DataField="weight" HeaderText="Weight" SortExpression="weight"></asp:BoundField>
+                        
                     </Columns>
                 </asp:GridView>
 
@@ -127,7 +127,7 @@
 
 
 
-                <asp:SqlDataSource runat="server" ID="question_data" ConnectionString='<%$ ConnectionStrings:pmsdbConnectionString %>' DeleteCommand="DELETE FROM [question_table] WHERE [question_id] = @question_id" InsertCommand="INSERT INTO [question_table] ([question], [option_a], [option_c], [option_b], [choice_ans], [option_d], [weight]) VALUES (@question, @option_a, @option_c, @option_b, @choice_ans, @option_d, @weight)" SelectCommand="SELECT [question_id], [question], [option_a], [option_c], [option_b], [choice_ans], [option_d], [weight] FROM [question_table] WHERE ([company_id] = @company_id)" UpdateCommand="UPDATE [question_table] SET [question] = @question, [option_a] = @option_a, [option_c] = @option_c, [option_b] = @option_b, [choice_ans] = @choice_ans, [option_d] = @option_d, [weight] = @weight WHERE [question_id] = @question_id">
+                <asp:SqlDataSource runat="server" ID="question_data" ConnectionString='<%$ ConnectionStrings:pmsdbConnectionString %>' DeleteCommand="DELETE FROM [question_table] WHERE [question_id] = @question_id" InsertCommand="INSERT INTO [question_table] ([question], [option_a], [option_c], [option_b], [choice_ans], [option_d]) VALUES (@question, @option_a, @option_c, @option_b, @choice_ans, @option_d)" SelectCommand="SELECT [question_id], [question], [option_a], [option_c], [option_b], [choice_ans], [option_d] FROM [question_table] WHERE ([company_id] = @company_id)" UpdateCommand="UPDATE [question_table] SET [question] = @question, [option_a] = @option_a, [option_c] = @option_c, [option_b] = @option_b, [choice_ans] = @choice_ans, [option_d] = @option_d WHERE [question_id] = @question_id">
                     <DeleteParameters>
                         <asp:Parameter Name="question_id" Type="Int32"></asp:Parameter>
                     </DeleteParameters>
@@ -138,7 +138,7 @@
                         <asp:Parameter Name="option_b" Type="String"></asp:Parameter>
                         <asp:Parameter Name="choice_ans" Type="String"></asp:Parameter>
                         <asp:Parameter Name="option_d" Type="String"></asp:Parameter>
-                        <asp:Parameter Name="weight" Type="Int32"></asp:Parameter>
+                       
                     </InsertParameters>
                     <SelectParameters>
                         <asp:SessionParameter SessionField="company_id" DefaultValue="1" Name="company_id" Type="Int32"></asp:SessionParameter>
@@ -150,7 +150,7 @@
                         <asp:Parameter Name="option_b" Type="String"></asp:Parameter>
                         <asp:Parameter Name="choice_ans" Type="String"></asp:Parameter>
                         <asp:Parameter Name="option_d" Type="String"></asp:Parameter>
-                        <asp:Parameter Name="weight" Type="Int32"></asp:Parameter>
+                        
                         <asp:Parameter Name="question_id" Type="Int32"></asp:Parameter>
                     </UpdateParameters>
                 </asp:SqlDataSource>

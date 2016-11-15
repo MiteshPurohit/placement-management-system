@@ -22,9 +22,12 @@ namespace placement_management_system
             if ((String)username == admin_username.Text.ToString() && (String)password == pass.Text.ToString())
             {
                 Session["admin_id"] = "admin";
-                Response.Redirect("admin_home.aspx");
+                Response.Redirect("dashboard.aspx");
             }
-            Console.Write(username + " " + password);
+            else
+            {
+                alert.InnerHtml = "<script>alert('Invalid username or password');</script>";
+            }
         }
     }
 }

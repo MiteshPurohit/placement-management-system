@@ -12,7 +12,7 @@ namespace placement_management_system.admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(Session["admin_id"] as string))
+            if (Session["admin_id"] == null)
             {
                 Response.Redirect("admin_login.aspx", true);
             }
@@ -21,9 +21,10 @@ namespace placement_management_system.admin
         {
             XDocument xdoc = XDocument.Load(Server.MapPath("~/admin/admin.xml"));
             var pass = xdoc.Element("admin").Element("password").Value;
-            if (new_pass.Text.Equals(confirm_new_pass.Text) && pass.Equals(old_pass))
+            if (new_pass.Text.Equals(confirm_new_pass.Text) && pass.Equals(old_pass.Text))
             {
                 xdoc.Element("admin").Element("password").Value = new_pass.Text;
+                xdoc.Save(Server.MapPath("~/admin/admin.xml"));
                 alert.InnerHtml = "<script>alert('Password has been changed successfully :)');</script>";
             }
             else

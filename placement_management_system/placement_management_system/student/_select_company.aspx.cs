@@ -12,12 +12,12 @@ namespace placement_management_system.student
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(Session["student_id"] as string))
+            if (Session["student_id"] == null)
             {
                 Response.Redirect("student_login.aspx", true);
             }
             double abcd;
-            if (!string.IsNullOrEmpty(Request.QueryString["id"] as string) && double.TryParse(Request.QueryString["id"], out abcd) && !string.IsNullOrEmpty(Request.QueryString["select"] as string) && (Request.QueryString["select"].Equals("true") || Request.QueryString["select"].Equals("false")))
+            if ((Request.QueryString["id"] == null) && double.TryParse(Request.QueryString["id"], out abcd) && Request.QueryString["select"] == null && (Request.QueryString["select"].Equals("true") || Request.QueryString["select"].Equals("false")))
             {
                 Response.Redirect("select_company.aspx", true);
             }

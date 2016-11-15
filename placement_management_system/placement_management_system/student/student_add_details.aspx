@@ -27,12 +27,12 @@
 
     </nav>
     <ul id="nav-mobile" class="side-nav fixed" style="height: 100%; width: 24%; transform: translateX(0px); border-right: solid thin #e0e0e0; transform: translateX(0px); margin: 0px 0px 0px 0px; padding-top: 5.35%;">
-        <li class="bold"><a href="#" style="padding-left: 48px;" class="waves-effect waves-teal">Deshboard</a></li>
+        <li class="bold"><a href="dashboard.aspx" style="padding-left:48px;" class="waves-effect waves-teal">Deshboard</a></li>
         <li class="bold"><a href="select_company_for_test.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">Written test</a></li>
         <li class="bold active"><a href="student_add_details.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">View & edit details</a></li>
         <li class="bold"><a href="view_company.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">View companies</a></li>
         <li class="bold"><a href="select_company.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">Select intrested companies</a></li>
-        <li class="bold"><a href="view_result.aspx" style="padding-left:48px;" class="waves-effect waves-teal">View test result</a></li>
+        <li class="bold"><a href="view_result.aspx" style="padding-left:48px;" class="waves-effect waves-teal">View result</a></li>
         <li class="bold"><a href="change_password.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">Change Password</a></li>
         <li class="bold"><a href="logout.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">Logout</a></li>
     </ul>
@@ -86,11 +86,11 @@
                             <asp:TextBox ID="birthdate" type="date" TextMode="Date" name="dob" class="datepicker" placeholder="Birthdate" runat="server"></asp:TextBox>
                             <script>
                                 $('.datepicker').pickadate({
-                                    selectMonths: true, // Creates a dropdown to control month
-                                    selectYears: 30 // Creates a dropdown of 15 years to control year
-
-                                });
-
+                                    min: new Date(1990, 1, 1),
+                                    max: new Date(2016, 1, 1),
+                                    selectMonths: true,
+                                    selectYears: true
+                                })
                             </script>
                         </div>
 

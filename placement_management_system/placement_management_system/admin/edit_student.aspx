@@ -31,10 +31,10 @@
 
     </nav>
     <ul id="nav-mobile" class="side-nav fixed" style="height: 100%; width: 24%; transform: translateX(0px); border-right: solid thin #e0e0e0; transform: translateX(0px); margin: 0px 0px 0px 0px; padding-top: 5.35%;">
-        <li class="bold"><a href="#" style="padding-left: 48px;" class="waves-effect waves-teal">Deshboard</a></li>
+        <li class="bold"><a href="dashboard.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">Dashboard</a></li>
         <li class="bold"><a href="add_student.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">Add Student</a></li>
-        <li class="bold active"><a href="view_student.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">View Students Data</a></li>
-        <li class="bold"><a href="edit_student.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">Edit Students Data</a></li>
+        <li class="bold"><a href="view_student.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">Selected Students For PI</a></li>
+        <li class="bold active"><a href="edit_student.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">View & Edit Students Data</a></li>
         <li class="bold"><a href="view_company.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">View & Edit Company Data</a></li>
         <li class="bold"><a href="change_password.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">Change Password</a></li>
         <li class="bold"><a href="logout.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">Logout</a></li>
@@ -44,12 +44,12 @@
 
     <div style="margin-top: 6%; width: 100%; padding: 0px; position: absolute; padding-left: 24%;">
         <div class="grey lighten-4" style="width: 100%; padding-top: 4px; padding-bottom: 6px;">
-            <h4 class="center-align">View Students</h4>
+            <h4 class="center-align">View & Edit Students Details</h4>
         </div>
         <div class="container" style="margin-top: 1%; margin-left: 0%;">
             <form runat="server">
 
-                <asp:GridView CssClass="bordered highlight" ID="GridView2" runat="server" Style="min-width: 1500px;" AutoGenerateColumns="False" DataSourceID="student_data" AllowPaging="True" AllowSorting="True" DataKeyNames="student_id">
+                <asp:GridView  CssClass="bordered highlight" ID="GridView2" runat="server" Style="min-width: 1500px;" AutoGenerateColumns="False" DataSourceID="student_data" AllowPaging="True" AllowSorting="True" DataKeyNames="student_id">
                     <Columns>
                         <asp:CommandField ShowEditButton="True"></asp:CommandField>
                         <asp:BoundField DataField="student_id" HeaderText="student id" SortExpression="student_id" InsertVisible="False" ReadOnly="True"></asp:BoundField>

@@ -31,10 +31,10 @@
 
     </nav>
     <ul id="nav-mobile" class="side-nav fixed" style="height: 100%; width: 24%; transform: translateX(0px); border-right: solid thin #e0e0e0; transform: translateX(0px); margin: 0px 0px 0px 0px; padding-top: 5.35%;">
-        <li class="bold"><a href="#" style="padding-left: 48px;" class="waves-effect waves-teal">Deshboard</a></li>
+         <li class="bold"><a href="dashboard.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">Dashboard</a></li>
         <li class="bold"><a href="add_student.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">Add Student</a></li>
-        <li class="bold"><a href="view_student.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">View Students Data</a></li>        
-        <li class="bold"><a href="edit_student.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">Edit Students Data</a></li>
+        <li class="bold"><a href="view_student.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">Selected Students For PI</a></li>        
+        <li class="bold"><a href="edit_student.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">View & Edit Students Data</a></li>
         <li class="bold active"><a href="view_company.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">View & Edit Company Data</a></li>
         <li class="bold"><a href="change_password.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">Change Password</a></li>
         <li class="bold"><a href="logout.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">Logout</a></li>
@@ -44,11 +44,11 @@
 
     <div style="margin-top: 6%; width: 100%; padding: 0px; position: absolute; padding-left: 24%;">
         <div class="grey lighten-4" style="width: 100%; padding-top: 4px; padding-bottom: 6px;">
-            <h4 class="center-align">View Companies</h4>
+            <h4 class="center-align">View & Edit Companies Details</h4>
         </div>
         <div class="container" style="margin-top: 1%; margin-left: 0%;">
             <form runat="server">
-
+                
                 <asp:GridView ID="GridView1"  CssClass="bordered highlight" runat="server" style="min-width:2100px;" AutoGenerateColumns="False" DataKeyNames="company_id" DataSourceID="company_data" AllowPaging="True" AllowSorting="True">
                     <Columns>
                         <asp:CommandField ShowEditButton="True" ShowDeleteButton="True"></asp:CommandField>
@@ -60,11 +60,11 @@
                         <asp:BoundField DataField="tentative_salary" HeaderText="tentative salary" SortExpression="tentative_salary"></asp:BoundField>
                         <asp:BoundField DataField="job_post" HeaderText="job post" SortExpression="job_post"></asp:BoundField>
                         <asp:BoundField DataField="job_location" HeaderText="job location" SortExpression="job_location"></asp:BoundField>
-                        <asp:BoundField DataField="description" HeaderText="description" SortExpression="description"></asp:BoundField>
-                        <asp:BoundField DataField="other_details" HeaderText="other job details" SortExpression="other_details"></asp:BoundField>
+                        <asp:BoundField DataField="description" HeaderText="description" ControlStyle-Width="180px" ItemStyle-Width="180px" SortExpression="description"></asp:BoundField>
+                        <asp:BoundField DataField="other_details" HeaderText="other job details"  ControlStyle-Width="180px" ItemStyle-Width="180px" SortExpression="other_details"></asp:BoundField>
                        <asp:BoundField DataField="email" HeaderText="email" SortExpression="email"></asp:BoundField>
                         <asp:BoundField DataField="phone" HeaderText="phone" SortExpression="phone"></asp:BoundField>
-                       
+                      
                     </Columns>
                 </asp:GridView>
                 <asp:SqlDataSource runat="server" ID="company_data" ConnectionString='<%$ ConnectionStrings:pmsdbConnectionString %>' DeleteCommand="DELETE FROM [company_table] WHERE [company_id] = @company_id" InsertCommand="INSERT INTO [company_table] ([password], [tentative_salary], [job_post], [job_location], [company_name], [description], [other_details], [required_min_cpi], [email], [phone], [required_branches]) VALUES (@password, @tentative_salary, @job_post, @job_location, @company_name, @description, @other_details, @required_min_cpi, @email, @phone, @required_branches)" SelectCommand="SELECT * FROM [company_table]" UpdateCommand="UPDATE [company_table] SET [password] = @password, [tentative_salary] = @tentative_salary, [job_post] = @job_post, [job_location] = @job_location, [company_name] = @company_name, [description] = @description, [other_details] = @other_details, [required_min_cpi] = @required_min_cpi, [email] = @email, [phone] = @phone, [required_branches] = @required_branches WHERE [company_id] = @company_id">

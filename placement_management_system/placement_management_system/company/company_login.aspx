@@ -12,7 +12,9 @@
     <title></title>
 </head>
 <body>
-    <nav>
+    <script type="text/javascript" src="../materialize/jquery-2.1.1.min.js"></script>
+<div runat="server" id="alert"></div>
+    <nav class="red lighten-1">
         <div class="nav-wrapper">
 
             <span style="margin-left: 3%; font-size: 2em;">Placement Cell</span>

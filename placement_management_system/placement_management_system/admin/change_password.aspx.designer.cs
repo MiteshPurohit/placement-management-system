@@ -64,6 +64,6 @@ namespace placement_management_system.admin {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputSubmit change_pass;
+        protected global::System.Web.UI.WebControls.Button change_pass;
     }
 }

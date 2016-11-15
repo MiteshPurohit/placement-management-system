@@ -12,7 +12,8 @@
     <title></title>
 </head>
 <body>
-    <nav>
+    <div runat="server" id="alert"></div>
+    <nav class="red lighten-1">
         <div class="nav-wrapper">
 
             <span style="margin-left: 3%; font-size: 2em;">Placement Cell</span>

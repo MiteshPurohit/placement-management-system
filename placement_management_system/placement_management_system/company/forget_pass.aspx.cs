@@ -19,7 +19,7 @@ namespace placement_management_system.company
 
         protected void send_password(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(company_id.Text))
+            if (company_id.Text != null)
             {
 
                 SqlConnection con = new SqlConnection();
@@ -32,6 +32,7 @@ namespace placement_management_system.company
                 reader.Read();
 
                 MailMessage o = new MailMessage("snk.bhimani.jnd@gmail.com", reader["email"].ToString(), "Your password for placement management system", "Respected sir/mam,<br><p>Your password is: " + reader["password"].ToString() + "</p><br>from placement management system");
+                o.IsBodyHtml = true;
                 NetworkCredential netCred = new NetworkCredential("snk.bhimani.jnd@gmail.com", "SNK.bhimani3");
                 SmtpClient smtpobj = new SmtpClient("smtp.gmail.com", 587);
                 smtpobj.EnableSsl = true;
@@ -39,6 +40,10 @@ namespace placement_management_system.company
                 smtpobj.Send(o);
                 con.Close();
                 alert.InnerHtml = "<script>alert('Your password has been sent to your email address');</script>";
+            }
+            else
+            {
+                alert.InnerHtml = "<script>alert('Enter Email address first');</script>";
             }
         }
         

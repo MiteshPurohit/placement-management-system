@@ -1,6 +1,6 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <admin>
   <username>admin</username>
-  <password>admin</password>
+  <password>sanket</password>
   <company_reg_pass>admin</company_reg_pass>
 </admin>

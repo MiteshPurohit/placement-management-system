@@ -13,7 +13,7 @@ namespace placement_management_system.company
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            if (string.IsNullOrEmpty(Session["company_id"] as string))
+            if (Session["company_id"] == null)
             {
                 Response.Redirect("company_login.aspx", true);
             }
@@ -58,18 +58,42 @@ namespace placement_management_system.company
         }
         protected void start_test_click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection();
-            con.ConnectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename='C:\Users\Sanket Bhimani\Source\Repos\placement-management-system\placement_management_system\placement_management_system\db\pmsdb.mdf';Integrated Security=True;Connect Timeout=30";
-            con.Open();
-            SqlCommand cmd = new SqlCommand();
-            cmd.Connection = con;
-            cmd.CommandText = "UPDATE company_table set test_h='" + htime.Value.ToString() + "',test_m='" + mtime.Value.ToString() + "',start='true' where company_id = '" + Session["company_id"].ToString() + "'";
+
+            if (htime.Value.ToString() == "" || mtime.Value.ToString() == "")
+            {
+                alert.InnerHtml = "<script>alert('Enter Hours and Minutes first');</script>";
+            }
+            else
+            {
+
+                SqlConnection con = new SqlConnection();
+                con.ConnectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename='C:\Users\Sanket Bhimani\Source\Repos\placement-management-system\placement_management_system\placement_management_system\db\pmsdb.mdf';Integrated Security=True;Connect Timeout=30";
+                con.Open();
+                SqlCommand c = new SqlCommand();
+                c.Connection = con;
+                c.CommandText = "Select COUNT(*) from question_table where company_id='" + Session["company_id"] + "'";
+                int a = (int)c.ExecuteScalar();
+                if (a != 0)
+                {
+
+                
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = con;
+                cmd.CommandText = "UPDATE company_table set test_h='" + htime.Value.ToString() + "',test_m='" + mtime.Value.ToString() + "',start='true' where company_id = '" + Session["company_id"].ToString() + "'";
+
+                cmd.ExecuteNonQuery();
+                con.Close();
+                start_test_div.Visible = false;
+                stop_test_div.Visible = true;
+                complete_shedule_div.Visible = false;
+                }
+                else
+                {
+                    alert.InnerHtml = "<script>alert('Enter Questions first');</script>";
+                }
+            }
+
             
-            cmd.ExecuteNonQuery();
-            con.Close();
-            start_test_div.Visible = false;
-            stop_test_div.Visible = true;
-            complete_shedule_div.Visible = false;
         }
 
         protected void stop_test_click(object sender, EventArgs e)

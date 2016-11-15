@@ -13,6 +13,15 @@ namespace placement_management_system {
     public partial class company_login {
         
         /// <summary>
+        /// alert control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl alert;
+        
+        /// <summary>
         /// company_id control.
         /// </summary>
         /// <remarks>

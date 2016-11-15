@@ -28,17 +28,17 @@ namespace placement_management_system
                 if (((String)reader["password"].ToString()).Equals((String)pass.Text.ToString()))
                 {
                     Session["company_id"] = reader["company_id"];
-                    Response.Redirect("company_home.aspx");
+                    Response.Redirect("dashboard.aspx",true);
                 }
                 else
                 {
-                    //incorrect password
+                    alert.InnerHtml = "<script>alert('Invalid Password');</script>";
                 }
 
             }
             else
             {
-                //incorrect username
+                alert.InnerHtml = "<script>alert('Invalid Username');</script>";
             }
             con.Close();
         }

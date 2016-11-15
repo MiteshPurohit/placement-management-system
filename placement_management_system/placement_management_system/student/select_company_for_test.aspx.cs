@@ -12,7 +12,7 @@ namespace placement_management_system.student
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(Session["student_id"] as string))
+            if (Session["student_id"] == null)
             {
                 Response.Redirect("student_login.aspx", true);
             }
@@ -27,7 +27,7 @@ namespace placement_management_system.student
             name.Text = r["full_name"].ToString();
             r.Close();
 
-            c.CommandText = "SELECT company_id, company_name from company_table where company_id in (select company_id from company_choice where student_id = '" + Session["student_id"].ToString() + "') and company_id in (select company_id from schedule where start = 'True')";
+            c.CommandText = "SELECT company_id, company_name from company_table where company_id in (select company_id from company_choice where student_id = '" + Session["student_id"].ToString() + "') and company_id in (select company_id from company_table where start = 'True')";
             r = c.ExecuteReader();
             
             

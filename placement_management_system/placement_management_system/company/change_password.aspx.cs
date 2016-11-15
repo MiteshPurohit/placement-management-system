@@ -13,7 +13,7 @@ namespace placement_management_system.company
         string pass; 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(Session["company_id"] as string))
+            if (Session["company_id"] == null)
             {
                 Response.Redirect("company_login.aspx", true);
             }
@@ -22,7 +22,7 @@ namespace placement_management_system.company
             con.Open();
             SqlCommand c = new SqlCommand();
             c.Connection = con;
-            c.CommandText = "SELECT * from company_table where student_id = '" + Session["company_id"].ToString() + "'";
+            c.CommandText = "SELECT * from company_table where company_id = '" + Session["company_id"].ToString() + "'";
             SqlDataReader r = c.ExecuteReader();
             r.Read();
             name.Text = r["company_name"].ToString();
@@ -31,14 +31,14 @@ namespace placement_management_system.company
         }
         protected void _change_password(object sender, EventArgs e)
         {
-            if (new_pass.Text.Equals(confirm_new_pass.Text) && pass.Equals(old_pass))
+            if (new_pass.Text.Equals(confirm_new_pass.Text) && pass.Equals(old_pass.Text))
             {
                 SqlConnection con = new SqlConnection();
                 con.ConnectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename='C:\Users\Sanket Bhimani\Source\Repos\placement-management-system\placement_management_system\placement_management_system\db\pmsdb.mdf';Integrated Security=True;MultipleActiveResultSets=True;Connect Timeout=30";
                 con.Open();
                 SqlCommand c = new SqlCommand();
                 c.Connection = con;
-                c.CommandText = "update company_table set password='" + new_pass.Text + "' where student_id = '" + Session["student_id"].ToString() + "'";
+                c.CommandText = "update company_table set password='" + new_pass.Text + "' where company_id = '" + Session["company_id"].ToString() + "'";
                 c.ExecuteNonQuery();
                 con.Close();
                 alert.InnerHtml = "<script>alert('Password has been changed successfully :)');</script>";

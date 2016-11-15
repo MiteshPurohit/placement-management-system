@@ -11,12 +11,13 @@ namespace placement_management_system.company
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(Session["company_id"] as string))
+            if (Session["company_id"] == null)
             {
                 Response.Redirect("company_login.aspx", true);
             }
             Session.Clear();
             Session.Abandon();
+            Session.RemoveAll();
             Response.Redirect("company_login.aspx", true);
         }
     }

@@ -14,7 +14,7 @@ namespace placement_management_system.student
        
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(Session["student_id"] as string))
+            if (Session["student_id"] == null)
             {
                 Response.Redirect("student_login.aspx", true);
             }
@@ -79,47 +79,31 @@ namespace placement_management_system.student
 var totalSeconds = 0;
 function abcd(){
 if(readCookie('time" + Session["student_id"].ToString() + Session["company_id"].ToString() + @"')!=null){
-//alert(totalSeconds+'###0');
     totalSeconds = readCookie('time" + Session["student_id"].ToString() + Session["company_id"].ToString() + @"');
-//alert(totalSeconds+'###1');
 }
 else{
-//alert(totalSeconds+'!!!0');
-                                totalSeconds = " + Int32.Parse(r["test_h"].ToString()) * 60 * 60 + Int32.Parse(r["test_m"].ToString()) * 60 + @";
-//alert(totalSeconds+'!!!1');
+var hour_s = "+Int32.Parse(r["test_h"].ToString()) * 60 * 60+@";
+var min_s = "+Int32.Parse(r["test_m"].ToString()) * 60 + @";
+totalSeconds = hour_s + min_s;
 }
-
-//alert(totalSeconds+'0');
 var timerVar = setInterval(countTimer, 1000);
-//alert(totalSeconds+'1');
 }
-
-
                                 function countTimer() {
-//alert(totalSeconds+'2');
-                                totalSeconds -= 1;
-//alert(totalSeconds+'3');
+                               totalSeconds -= 1;
 createCookie('time" + Session["student_id"].ToString() + Session["company_id"].ToString() + @"',totalSeconds,1);
-//alert(totalSeconds+'4');
                                 if(totalSeconds==0){
                                 clearInterval(timerVar);
 createCookie('time" + Session["student_id"].ToString() + Session["company_id"].ToString() + @"',totalSeconds,-1);
-//alert(totalSeconds+'5');
                                 $('#complete_test_div').css('display', 'block');
                                 $('#questions_div').css('display', 'none');
                                 $('#submit_btn').click();
 
                                 }
-//alert(totalSeconds+'6');
-                                var hour = parseInt(totalSeconds/3600);
-//alert(totalSeconds+'7');
-                                var minute = parseInt((totalSeconds/60));
-//alert(totalSeconds+'8');
-                                var seconds = totalSeconds - (hour*3600 + minute*60);
-//alert(totalSeconds+'9');
 
-                                document.getElementById('timer').innerHTML = totalSeconds + ' '+hour + ':' + minute + ':' + seconds;
-//alert(totalSeconds+'10');
+                                var hour = parseInt(totalSeconds/3600);
+                                var minute = parseInt((totalSeconds/60)) - hour*60;
+                                var seconds = totalSeconds - (hour*3600 + minute*60);
+                                document.getElementById('timer').innerHTML = 'Time Left: '+hour + ':' + minute + ':' + seconds;
                                 }
 $(document).ready(function(){
 abcd();

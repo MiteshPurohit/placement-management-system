@@ -29,35 +29,39 @@
 
     </nav>
     <ul id="nav-mobile" class="side-nav fixed" style="height:100%; width:24%; transform: translateX(0px); border-right:solid thin #e0e0e0; transform: translateX(0px); margin:0px 0px 0px 0px; padding-top:5.35%;">
-        <li class="bold"><a href="#" style="padding-left:48px;" class="waves-effect waves-teal">Deshboard</a></li>
+        <li class="bold"><a href="dashboard.aspx" style="padding-left:48px;" class="waves-effect waves-teal">Deshboard</a></li>
         <li class="bold"><a href="select_company_for_test.aspx" style="padding-left:48px;" class="waves-effect waves-teal">Written test</a></li>
         <li class="bold"><a href="student_add_details.aspx" style="padding-left:48px;" class="waves-effect waves-teal">View & edit details</a></li>
         <li class="bold"><a href="view_company.aspx" style="padding-left:48px;" class="waves-effect waves-teal">View companies</a></li>
         <li class="bold"><a href="select_company.aspx" style="padding-left:48px;" class="waves-effect waves-teal">Select intrested companies</a></li>
-        <li class="bold active"><a href="view_result.aspx" style="padding-left:48px;" class="waves-effect waves-teal">View test result</a></li>
+        <li class="bold active"><a href="view_result.aspx" style="padding-left:48px;" class="waves-effect waves-teal">View result</a></li>
         <li class="bold"><a href="change_password.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">Change Password</a></li>
         <li class="bold"><a href="logout.aspx" style="padding-left:48px;" class="waves-effect waves-teal">Logout</a></li>
     </ul>
 
-   
+   <form runat="server">
      <div style="margin-top:6%; width:100%; padding: 0px; position:absolute; padding-left:24%;">
         <div class="grey lighten-4" style="width:100%; padding-top:4px; padding-bottom:6px;">
             <h4 class="center-align">View Companies</h4>
         </div>
-         <div class="container" style=" margin-top:1%; margin-left:9%; width:90%; max-width:600px;">
-        
-             <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="result_data">
+         <div class="container" style=" margin-top:1%; max-width:1200px;">
+        <blockquote>
+            If you are not selected for PI then wait for some days 
+            <br />because it may possible that company may not have updated.
+            </blockquote>
+             
+                          <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="result_data">
                  <Columns>
                      <asp:BoundField DataField="company_id" HeaderText="company id" SortExpression="company_id"></asp:BoundField>
                      <asp:BoundField DataField="company_name" HeaderText="company name" SortExpression="company_name"></asp:BoundField>
-                     <asp:CheckBoxField DataField="selected" HeaderText="selected for PI" SortExpression="selected"></asp:CheckBoxField>
-                     <asp:CheckBoxField DataField="written_test_given" HeaderText="written test given" SortExpression="written_test_given"></asp:CheckBoxField>
+                     <asp:BoundField DataField="selected" HeaderText="selected for PI" SortExpression="selected"></asp:BoundField>
+                     <asp:BoundField DataField="written_test_given" HeaderText="written test given" SortExpression="written_test_given"></asp:BoundField>
                      <asp:BoundField DataField="written_test_marks" HeaderText="written test marks" SortExpression="written_test_marks"></asp:BoundField>
                  </Columns>
              </asp:GridView>
 
 
-             <asp:SqlDataSource runat="server" ID="result_data" ConnectionString='<%$ ConnectionStrings:pmsdbConnectionString %>' SelectCommand="SELECT company_choice.company_id, company_table.company_name, company_choice.selected, company_choice.written_test_given, company_choice.written_test_marks FROM company_choice INNER JOIN company_table ON company_choice.company_id = company_table.company_id where student_id='@student_id'">
+             <asp:SqlDataSource runat="server" ID="result_data" ConnectionString='<%$ ConnectionStrings:pmsdbConnectionString %>' SelectCommand="SELECT company_choice.company_id, company_table.company_name, company_choice.selected, company_choice.written_test_given, company_choice.written_test_marks FROM company_choice INNER JOIN company_table ON company_choice.company_id = company_table.company_id where student_id=@student_id">
                   <SelectParameters>
                         <asp:SessionParameter SessionField="student_id" DefaultValue="1" Name="student_id" Type="Int32"></asp:SessionParameter>
                     </SelectParameters>
@@ -65,5 +69,6 @@
          </div>
             
     </div>
+       </form>
  </body>
 </html>

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="change_password.aspx.cs" Inherits="placement_management_system.admin.change_password" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="dashboard.aspx.cs" Inherits="placement_management_system.admin.dashboard" %>
 
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -31,12 +31,12 @@
 
     </nav>
     <ul id="nav-mobile" class="side-nav fixed" style="height: 100%; width: 24%; transform: translateX(0px); border-right: solid thin #e0e0e0; transform: translateX(0px); margin: 0px 0px 0px 0px; padding-top: 5.35%;">
-         <li class="bold"><a href="dashboard.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">Dashboard</a></li>
+        <li class="bold active"><a href="dashboard.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">Dashboard</a></li>
         <li class="bold"><a href="add_student.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">Add Student</a></li>
         <li class="bold"><a href="view_student.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">Selected Students For PI</a></li>
         <li class="bold"><a href="edit_student.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">View & Edit Students Data</a></li>
         <li class="bold"><a href="view_company.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">View & Edit Company Data</a></li>
-        <li class="bold active"><a href="change_password.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">Change Password</a></li>
+        <li class="bold"><a href="change_password.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">Change Password</a></li>
         <li class="bold"><a href="logout.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">Logout</a></li>
     </ul>
 
@@ -44,44 +44,17 @@
 
     <div style="margin-top: 6%; width: 100%; padding: 0px; position: absolute; padding-left: 24%;">
         <div class="grey lighten-4" style="width: 100%; padding-top: 4px; padding-bottom: 6px;">
-            <h4 class="center-align">View Students</h4>
+            <h4 class="center-align">Dashboard</h4>
         </div>
         <div class="container" style="margin-top: 1%;">
             <form runat="server">
-
-                 <div class="row">
-                    <div class="input-field col s6">
-                        <asp:TextBox ID="old_pass" class="validate" runat="server"></asp:TextBox>
-
-
-                        <label for="cname">Old Password</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s6">
-                        <asp:TextBox ID="new_pass" name="cname" class="validate" runat="server"></asp:TextBox>
-
-
-                        <label for="cname">New Password</label>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="input-field col s6">
-                        <asp:TextBox ID="confirm_new_pass" name="cname" class="validate" runat="server"></asp:TextBox>
-
-
-                        <label for="cname">Confirm Password</label>
-                    </div>
-                </div>
-                
-                <asp:Button ID="change_pass" runat="server" Text="change password"  class="btn waves-effect waves-light" onclick="_change_password"/>
-
-
+                <blockquote>
+     Goto "Add Student" and add students data.<br /><br />
+                       At the end of the process goto "reset system" and clear all database.
+    </blockquote>
             </form>
         </div>
 
     </div>
 </body>
 </html>
-

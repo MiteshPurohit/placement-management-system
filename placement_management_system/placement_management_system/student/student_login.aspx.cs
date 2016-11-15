@@ -20,24 +20,24 @@ namespace placement_management_system
             con.ConnectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename='C:\Users\Sanket Bhimani\Source\Repos\placement-management-system\placement_management_system\placement_management_system\db\pmsdb.mdf';Integrated Security=True;Connect Timeout=30";
             con.Open();
             SqlCommand cmd = new SqlCommand();
-            cmd.Connection = con;
+                cmd.Connection = con;
             cmd.CommandText = "SELECT * from student_table where collage_id = '" + clg_id.Text.ToString() + "'";
             SqlDataReader reader = cmd.ExecuteReader();
             if(reader.Read()){
                 if (((String)reader["password"].ToString()).Equals((String)pass.Text.ToString()))
                 {
                     Session["student_id"] = reader["student_id"];
-                    Response.Redirect("student_add_details.aspx");
+                    Response.Redirect("dashboard.aspx");
                 }
                 else
                 {
-                    //incorrect password
+                    alert.InnerHtml = "<script>alert('Invalid Password');</script>";
                 }
 
             }
             else
             {
-                //incorrect username
+                alert.InnerHtml = "<script>alert('Invalid Username');</script>";
             }
             con.Close();
         }
