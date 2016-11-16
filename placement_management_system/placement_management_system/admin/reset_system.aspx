@@ -33,8 +33,9 @@
         <li class="bold"><a href="add_student.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">Add Student</a></li>
         <li class="bold"><a href="view_student.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">Selected Students For PI</a></li>        
         <li class="bold"><a href="edit_student.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">View & Edit Students Data</a></li>
-        <li class="bold active"><a href="view_company.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">View & Edit Company Data</a></li>
+        <li class="bold"><a href="view_company.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">View & Edit Company Data</a></li>
         <li class="bold"><a href="change_password.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">Change Password</a></li>
+                <li class="bold active"><a href="reset_system.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">Reset System</a></li>
         <li class="bold"><a href="logout.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">Logout</a></li>
     </ul>
 
@@ -48,7 +49,7 @@
             <form runat="server">
                 <div runat="server" id="reset_div">
                   <div class="row">
-                        <div class="input-field col s4">
+                        <div class="input-field col s6">
                             <asp:TextBox ID="reset_text" name="reset_text" class="validate" runat="server"></asp:TextBox>
                             <label for="reset_text">Type 'RESET' in capital letter and then press reset button</label>
                         </div>

@@ -56,9 +56,9 @@ namespace placement_management_system.company
             {
                 if (r["email_id"].ToString() != null)
                 {
-                    MailMessage o = new MailMessage("snk.bhimani.jnd@gmail.com", r["email_id"].ToString(), "placement management system", "Hello " + r["full_name"] + ", <br>Congratulations, You are selected for personal interview for <b>" + name.Text + "</b>. for more details open your account.<br>-from placement management system");
+                    //MailMessage o = new MailMessage("snk.bhimani.jnd@gmail.com", r["email_id"].ToString(), "placement management system", "Hello " + r["full_name"] + ", <br>Congratulations, You are selected for personal interview for <b>" + name.Text + "</b>. for more details open your account.<br>-from placement management system");
 
-                    smtpobj.Send(o);
+                    //smtpobj.Send(o);
                 }
             }
             r.Close();

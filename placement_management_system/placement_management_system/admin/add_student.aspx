@@ -37,6 +37,7 @@
         <li class="bold"><a href="edit_student.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">View & Edit Students Data</a></li>
         <li class="bold"><a href="view_company.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">View & Edit Company Data</a></li>
         <li class="bold"><a href="change_password.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">Change Password</a></li>
+         <li class="bold"><a href="reset_system.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">Reset System</a></li>
         <li class="bold"><a href="logout.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">Logout</a></li>
     </ul>
 
@@ -123,9 +124,10 @@
                             <asp:TextBox ID="birthdate" type="date" TextMode="Date" name="dob" class="datepicker" placeholder="Birthdate" runat="server"></asp:TextBox>
                             <script>
                                 $('.datepicker').pickadate({
-                                    selectMonths: true, // Creates a dropdown to control month
-                                    selectYears: 30 // Creates a dropdown of 15 years to control year
-
+                                    min: new Date(1990, 1, 1),
+                                    max: new Date(2000, 1, 1),
+                                    selectMonths: true,
+                                    selectYears: true
                                 });
 
                             </script>

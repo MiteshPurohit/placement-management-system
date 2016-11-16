@@ -58,7 +58,7 @@
                         <div class="row">
                             <div class="input-field col s12">
                                 <input type="password" runat="server" id="apass" name="apass" class="validate" />
-                                <label for="apass">Enter Admin Password</label>
+                                <label for="apass">Enter Password To ragister (ask admin)</label>
                             </div>
                         </div>
                         <div class="row">
@@ -74,7 +74,7 @@
                         <div id="hide_key" runat="server"></div>
                         <div class="row">
                             <div class="input-field col s12">
-                                <input type="text" runat="server" id="cname" name="cname" class="validate" />
+                                <input type="text" runat="server" id="cname" name="cname" class="validate" required="required"/>
                                 <label for="cname">Company Name</label>
                             </div>
                         </div>
@@ -113,20 +113,20 @@
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
-                                <input type="email" runat="server" name="email" id="email" class="validate" />
+                                <input type="email" required="required" runat="server" name="email" id="email" class="validate" />
                                 <label for="email">Company E-mail Id</label>
                             </div>
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
-                                <input type="tel" runat="server" name="phone" id="phone" class="validate" />
+                                <input type="tel" runat="server" name="phone" required="required" id="phone" class="validate" />
                                 <label for="phone">Company Contact Number</label>
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="input-field col s12">
-                                <input type="text" runat="server" name="min_cpi" id="min_cpi" class="validate" />
+                                <input type="text" runat="server" name="min_cpi" id="min_cpi" required="required" class="validate" />
                                 <label for="min_cpi">Minimum CPI Required</label>
                             </div>
                         </div>
@@ -157,7 +157,7 @@
 
                         <div class="row">
                             <div class="input-field col s12">
-                                <input type="password" runat="server" name="password" id="password" class="validate" />
+                                <input type="password" runat="server" name="password" id="password" required="required" class="validate" />
                                 <label for="password">Password</label>
                             </div>
                         </div>
@@ -166,7 +166,7 @@
 
                         <div class="row">
                             <div class="input-field col s12">
-                                <input type="password" runat="server" name="cpassword" id="cpassword" class="validate" />
+                                <input type="password" runat="server" name="cpassword" id="cpassword" class="validate" required="required"/>
                                 <label for="cpassword">Conform Password</label>
                             </div>
                         </div>

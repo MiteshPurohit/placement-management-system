@@ -43,72 +43,81 @@ namespace placement_management_system.company
         {
             String selected_branches = "";
             List<string> brnchs = branches.Items.Cast<ListItem>().Where(li => li.Selected).Select(li => li.Value).ToList();
+            
             foreach (var item in brnchs)
             {
                 selected_branches += "," + item;
             }
-            String _name = cname.Value;
-            String _description = description.Value;
-            String _job_post = job_post.Value;
-            String _job_salary = job_salary.Value;
-            String _job_location = job_location.Value;
-            String _other_details = other_details.Value;
-            String _email = email.Value;
-            String _phone = phone.Value;
-            String _min_cpi = min_cpi.Value;
-            String _password = password.Value;
-            String _cpassword = cpassword.Value;
-            //String _key = key.Value;
-            if (_password == _cpassword)
+            if (!selected_branches.Equals(","))
             {
 
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename='C:\Users\Sanket Bhimani\Source\Repos\placement-management-system\placement_management_system\placement_management_system\db\pmsdb.mdf';Integrated Security=True;Connect Timeout=30";
-                con.Open();
-                SqlCommand cmd = new SqlCommand();
-                cmd.Connection = con;
-                cmd.CommandText = "select count(*) from company_table where email = '"+_email+"'";
-                int cnt = (int)cmd.ExecuteScalar();
-                if (cnt == 0)
+
+                String _name = cname.Value;
+                String _description = description.Value;
+                String _job_post = job_post.Value;
+                String _job_salary = job_salary.Value;
+                String _job_location = job_location.Value;
+                String _other_details = other_details.Value;
+                String _email = email.Value;
+                String _phone = phone.Value;
+                String _min_cpi = min_cpi.Value;
+                String _password = password.Value;
+                String _cpassword = cpassword.Value;
+                //String _key = key.Value;
+                if (_password == _cpassword)
                 {
-                    cmd.CommandText = "INSERT INTO company_table (company_name, description, other_details, required_min_cpi, job_post, job_location, tentative_salary, email, phone, password,required_branches) values ('" + _name + "','" + _description + "','" + _other_details + "','" + _min_cpi + "','" + _job_post + "','" + _job_location + "','" + _job_salary + "','" + _email + "','" + _phone + "','" + _password + "', '"+selected_branches+"')";
-                cmd.ExecuteNonQuery();
-                
-                company_id.Text = _email;
-                company_password.Text = _password;
-                reg_form.Visible = false;
-                after_reg.Visible = true;
-                cmd.Connection = con;
-                cmd.CommandText = "select * from student_table where cpi >= '"+_min_cpi+"'";
-                SqlDataReader reader = cmd.ExecuteReader();
-                NetworkCredential netCred = new NetworkCredential("snk.bhimani.jnd@gmail.com", "SNK.bhimani3");
-                SmtpClient smtpobj = new SmtpClient("smtp.gmail.com", 587);
-                smtpobj.EnableSsl = true;
-                smtpobj.Credentials = netCred;
-                while (reader.Read())
-                {
-                    if (reader["email_id"].ToString() != null)
+
+                    SqlConnection con = new SqlConnection();
+                    con.ConnectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename='C:\Users\Sanket Bhimani\Source\Repos\placement-management-system\placement_management_system\placement_management_system\db\pmsdb.mdf';Integrated Security=True;Connect Timeout=30";
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = con;
+                    cmd.CommandText = "select count(*) from company_table where email = '" + _email + "'";
+                    int cnt = (int)cmd.ExecuteScalar();
+                    if (cnt == 0)
                     {
-                        MailMessage o = new MailMessage("snk.bhimani.jnd@gmail.com", reader["email_id"].ToString(), "placement management system", "Hello " + reader["full_name"] + ", <br><b>" + _name + "</b> company has registered in this system kaindly visit and find select if intrested if your branch is one of these: " + selected_branches + ".<br>-from placement management system");
+                        cmd.CommandText = "INSERT INTO company_table (company_name, description, other_details, required_min_cpi, job_post, job_location, tentative_salary, email, phone, password,required_branches) values ('" + _name + "','" + _description + "','" + _other_details + "','" + _min_cpi + "','" + _job_post + "','" + _job_location + "','" + _job_salary + "','" + _email + "','" + _phone + "','" + _password + "', '" + selected_branches + "')";
+                        cmd.ExecuteNonQuery();
 
-                        smtpobj.Send(o);
+                        company_id.Text = _email;
+                        company_password.Text = _password;
+                        reg_form.Visible = false;
+                        after_reg.Visible = true;
+                        cmd.Connection = con;
+                        cmd.CommandText = "select * from student_table where cpi >= '" + _min_cpi + "'";
+                        SqlDataReader reader = cmd.ExecuteReader();
+                        NetworkCredential netCred = new NetworkCredential("snk.bhimani.jnd@gmail.com", "SNK.bhimani3");
+                        SmtpClient smtpobj = new SmtpClient("smtp.gmail.com", 587);
+                        smtpobj.EnableSsl = true;
+                        smtpobj.Credentials = netCred;
+                        while (reader.Read())
+                        {
+                            if (reader["email_id"].ToString() != null)
+                            {
+                                //MailMessage o = new MailMessage("snk.bhimani.jnd@gmail.com", reader["email_id"].ToString(), "placement management system", "Hello " + reader["full_name"] + ", <br><b>" + _name + "</b> company has registered in this system kaindly visit and find select if intrested if your branch is one of these: " + selected_branches + ".<br>-from placement management system");
+
+                                //smtpobj.Send(o);
+                            }
+
+                        }
+                        con.Close();
                     }
-                    
+                    else
+                    {
+                        alert.InnerHtml = "<script>alert('This email address is already ragisterd. try forget password if you do not remember your password');</script>";
+                    }
+
                 }
-                con.Close();
+                else
+                {
+                    alert.InnerHtml = "<script>alert('Password and Conform Password not matched');</script>";
+                }
+
             }
             else
             {
-                alert.InnerHtml = "<script>alert('This email address is already ragisterd. try forget password if you do not remember your password');</script>";
+                alert.InnerHtml = "<script>alert('select required branches');</script>";
             }
-            
-        }
-            else
-            {
-                alert.InnerHtml = "<script>alert('Password and Conform Password not matched');</script>";
-            }
-                
-           
         }
     }
 }

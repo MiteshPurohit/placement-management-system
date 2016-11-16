@@ -90,7 +90,7 @@
                                     max: new Date(2016, 1, 1),
                                     selectMonths: true,
                                     selectYears: true
-                                })
+                                });
                             </script>
                         </div>
 
@@ -122,7 +122,7 @@
                                     <input name="ref_docs" type="file">
                                 </div>
                                 <div class="file-path-wrapper">
-                                    <input class="file-path validate" placeholder="zip file of all reference document including your all certificates " type="text">
+                                    <input class="file-path validate" placeholder="zip file of CV/resume & all reference document including your all certificates" type="text">
                                 </div>
                             </div>
                         </div>
