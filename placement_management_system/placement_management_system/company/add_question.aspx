@@ -53,39 +53,39 @@
        
                  <div class="row">
         <div class="input-field col s12">
-          <textarea id="question" runat="server" class="materialize-textarea"></textarea>
+          <textarea id="question" required="required" runat="server" class="materialize-textarea"></textarea>
           <label for="question">Question</label>
         </div>
                      </div>
                      <div class="row">
         <div class="input-field col s12">
-          <input id="opta" type="text" runat="server" class="validate">
+          <input id="opta" required="required" type="text" runat="server" class="validate">
           <label for="opta">Option A</label>
         </div>
       </div>
                      <div class="row">
         <div class="input-field col s12">
-          <input id="optb" type="text" runat="server" class="validate">
+          <input id="optb" required="required" type="text" runat="server" class="validate">
           <label for="optb">Option B</label>
         </div>
       </div>
                      <div class="row">
         <div class="input-field col s12">
-          <input id="optc" type="text" runat="server" class="validate">
+          <input id="optc" required="required" type="text" runat="server" class="validate">
           <label for="optc">Option C</label>
         </div>
       </div>
                      <div class="row">
         <div class="input-field col s12">
-          <input id="optd" type="text" runat="server" class="validate">
+          <input id="optd" required="required" type="text" runat="server" class="validate">
           <label for="optd">Option D</label>
         </div>
       </div>
                      <div class="row">
 <div class="input-field col s12">
     <select  runat="server" id="ans">
-      <option value="" disabled selected>Select Answer</option>
-      <option value="1">Option A</option>
+      
+      <option value="1" selected>Option A</option>
       <option value="2">Option B</option>
       <option value="3">Option C</option>
         <option value="4">Option D</option>
