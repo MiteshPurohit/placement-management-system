@@ -74,7 +74,7 @@
                 </div>
 
                   <div class="grey lighten-4" style="width: 100%; padding-top: 4px; padding-bottom: 6px;">
-                <h4 class="center-align">Insert student menually</h4>
+                <h4 class="center-align">Insert student manually</h4>
             </div>
             <div  style="padding-top: 9%; width: 75%; padding-left: 3%;">
                  <div class="row">

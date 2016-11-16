@@ -66,7 +66,7 @@ namespace placement_management_system.student
                     id = reader["company_id"].ToString();
 
                     String str = String.Format(@"<li id='companies' runat='server'>
-            <div class='collapsible-header'><span class='new badge' data-badge-caption='{0}'></span><b>{1}</b></div><div class='collapsible-body'><table class='striped'><tr><td  style='padding-left:6%;'>Expected Job Post</td><td>{2}</td></tr><tr><td style='padding-left:6%;'>Expected Annual Job Selary</td><td>{3} $</td></tr><tr><td style='padding-left:6%;'>Expected Job Location</td><td>{4}</td></tr><tr><td style='padding-left:6%;'><a class='waves-effect waves-light btn' href='view_company_details.aspx?id={5}&src=select'>view more details</a></td><td><a class='waves-effect waves-light btn' href='_select_company.aspx?id={6}&select={7}'>{8}<a/></td></tr></table></div></li>", selected, company_name, post, selary, location, id, id, sel, text);
+            <div class='collapsible-header'><span class='new badge' data-badge-caption='{0}'></span><b>{1}</b></div><div class='collapsible-body'><table class='striped'><tr><td  style='padding-left:6%;'>Expected Job Post</td><td>{2}</td></tr><tr><td style='padding-left:6%;'>Expected Annual Job Selary</td><td>{3}  &#8377;</td></tr><tr><td style='padding-left:6%;'>Expected Job Location</td><td>{4}</td></tr><tr><td style='padding-left:6%;'><a class='waves-effect waves-light btn' href='view_company_details.aspx?id={5}&src=select'>view more details</a></td><td><a class='waves-effect waves-light btn' href='_select_company.aspx?id={6}&select={7}'>{8}<a/></td></tr></table></div></li>", selected, company_name, post, selary, location, id, id, sel, text);
                     imageGallery.Text += str;
 
                 }

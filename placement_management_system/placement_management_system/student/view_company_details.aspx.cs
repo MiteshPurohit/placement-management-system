@@ -45,7 +45,7 @@ namespace placement_management_system.student
                     cpi.InnerHtml += rdr["required_min_cpi"].ToString();
                     branchs.InnerHtml += rdr["required_branches"].ToString();
                     location.InnerHtml += rdr["job_post"].ToString();
-                    salary.InnerHtml += rdr["tentative_salary"].ToString();
+                    salary.InnerHtml += rdr["tentative_salary"].ToString()+" &#8377;";
                     details.InnerHtml += rdr["other_details"].ToString();
                 }
                 if (Request.QueryString["src"]=="select")

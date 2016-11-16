@@ -58,7 +58,7 @@
                         <div class="row">
                             <div class="input-field col s12">
                                 <input type="password" runat="server" id="apass" name="apass" class="validate" />
-                                <label for="apass">Enter Password To ragister (ask admin)</label>
+                                <label for="apass">Enter Password To register (ask admin)</label>
                             </div>
                         </div>
                         <div class="row">
@@ -167,14 +167,14 @@
                         <div class="row">
                             <div class="input-field col s12">
                                 <input type="password" runat="server" name="cpassword" id="cpassword" class="validate" required="required"/>
-                                <label for="cpassword">Conform Password</label>
+                                <label for="cpassword">Confirm Password</label>
                             </div>
                         </div>
 
 
                         <div class="row">
                             <div class="input-field col s12">
-                                <asp:Button runat="server" ID="reg_btn" class="btn waves-effect waves-light" Text="Ragister" OnClick="reg_btn_Click" />
+                                <asp:Button runat="server" ID="reg_btn" class="btn waves-effect waves-light" Text="Register" OnClick="reg_btn_Click" />
 
                             </div>
                         </div>

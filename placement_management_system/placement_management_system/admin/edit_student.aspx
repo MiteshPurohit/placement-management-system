@@ -53,16 +53,16 @@
                 <asp:GridView  CssClass="bordered highlight" ID="GridView2" runat="server" Style="min-width: 1500px;" AutoGenerateColumns="False" DataSourceID="student_data" AllowPaging="True" AllowSorting="True" DataKeyNames="student_id">
                     <Columns>
                         <asp:CommandField ShowEditButton="True"></asp:CommandField>
-                        <asp:BoundField DataField="student_id" HeaderText="student id" SortExpression="student_id" InsertVisible="False" ReadOnly="True"></asp:BoundField>
-                        <asp:BoundField DataField="collage_id" HeaderText="collage id" SortExpression="collage_id"></asp:BoundField>
-                        <asp:BoundField DataField="email_id" HeaderText="email id" SortExpression="email_id"></asp:BoundField>
-                        <asp:BoundField DataField="password" HeaderText="password" SortExpression="password"></asp:BoundField>
-                        <asp:BoundField DataField="mobile_no" HeaderText="mobile no" SortExpression="mobile_no"></asp:BoundField>
-                        <asp:BoundField DataField="branch" HeaderText="branch" SortExpression="branch"></asp:BoundField>
-                        <asp:BoundField DataField="dob" HeaderText="dob" SortExpression="dob"></asp:BoundField>
-                        <asp:BoundField DataField="cpi" HeaderText="cpi" SortExpression="cpi"></asp:BoundField>
-                        <asp:BoundField DataField="full_name" HeaderText="full name" SortExpression="full_name"></asp:BoundField>
-                        <asp:BoundField DataField="achievement" HeaderText="achievement" SortExpression="achievement"></asp:BoundField>
+                        <asp:BoundField DataField="student_id" HeaderText="Student ID" SortExpression="student_id" InsertVisible="False" ReadOnly="True"></asp:BoundField>
+                        <asp:BoundField DataField="collage_id" HeaderText="College ID" SortExpression="collage_id"></asp:BoundField>
+                        <asp:BoundField DataField="email_id" HeaderText="Email ID" SortExpression="email_id"></asp:BoundField>
+                        <asp:BoundField DataField="password" HeaderText="Password" SortExpression="password"></asp:BoundField>
+                        <asp:BoundField DataField="mobile_no" HeaderText="Mobile no" SortExpression="mobile_no"></asp:BoundField>
+                        <asp:BoundField DataField="branch" HeaderText="Branch" SortExpression="branch"></asp:BoundField>
+                        <asp:BoundField DataField="dob" HeaderText="D.O.B" SortExpression="dob"></asp:BoundField>
+                        <asp:BoundField DataField="cpi" HeaderText="CPI" SortExpression="cpi"></asp:BoundField>
+                        <asp:BoundField DataField="full_name" HeaderText="Full name" SortExpression="full_name"></asp:BoundField>
+                        <asp:BoundField DataField="achievement" HeaderText="Achievements" SortExpression="achievement"></asp:BoundField>
                         <asp:BoundField DataField="skills" HeaderText="skills" SortExpression="skills"></asp:BoundField>
                     </Columns>
                 </asp:GridView>

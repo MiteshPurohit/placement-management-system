@@ -35,7 +35,7 @@
                     <div class="row">
                         <div class="input-field col s12">
                             <asp:TextBox runat="server" ID="clg_id" class="validate" />
-                            <label for="first_name">Collage ID</label>
+                            <label for="first_name">College ID</label>
                         </div>
                         <div class="input-field col s12">
                             <asp:TextBox runat="server" ID="pass" TextMode="Password" class="validate" />

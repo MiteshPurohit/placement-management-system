@@ -45,7 +45,7 @@
 
     <div style="margin-top: 6%; width: 100%; padding: 0px; position: absolute; padding-left: 24%;">
         <div class="grey lighten-4" style="width: 100%; padding-top: 4px; padding-bottom: 6px;">
-            <h4 class="center-align">View Students</h4>
+            <h4 class="center-align">Change Password</h4>
         </div>
         <div class="container" style="margin-top: 1%;">
             <form runat="server">

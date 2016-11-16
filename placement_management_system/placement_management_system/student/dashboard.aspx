@@ -28,11 +28,11 @@
 
     </nav>
     <ul id="nav-mobile" class="side-nav fixed" style="height:100%; width:24%; transform: translateX(0px); border-right:solid thin #e0e0e0; transform: translateX(0px); margin:0px 0px 0px 0px; padding-top:5.35%;">
-        <li class="bold active"><a href="dashboard.aspx" style="padding-left:48px;" class="waves-effect waves-teal">Deshboard</a></li>
+        <li class="bold active"><a href="dashboard.aspx" style="padding-left:48px;" class="waves-effect waves-teal">Dashboard</a></li>
         <li class="bold"><a href="select_company_for_test.aspx" style="padding-left:48px;" class="waves-effect waves-teal">Written test</a></li>
         <li class="bold"><a href="student_add_details.aspx" style="padding-left:48px;" class="waves-effect waves-teal">View & edit details</a></li>
         <li class="bold"><a href="view_company.aspx" style="padding-left:48px;" class="waves-effect waves-teal">View companies</a></li>
-        <li class="bold"><a href="select_company.aspx" style="padding-left:48px;" class="waves-effect waves-teal">Select intrested companies</a></li>
+        <li class="bold"><a href="select_company.aspx" style="padding-left:48px;" class="waves-effect waves-teal">Select Interested companies</a></li>
         <li class="bold"><a href="view_result.aspx" style="padding-left:48px;" class="waves-effect waves-teal">View result</a></li>
         <li class="bold"><a href="change_password.aspx" style="padding-left: 48px;" class="waves-effect waves-teal">Change Password</a></li>
         <li class="bold"><a href="logout.aspx" style="padding-left:48px;" class="waves-effect waves-teal">Logout</a></li>
@@ -45,7 +45,7 @@
         </div>
          <div class="container" style=" margin-top:1%; max-width:1200px;">
         <blockquote>
-     Goto "View & Edit Details" and complete your details, here in zip file upload all your refrance documents like achivements cirtificates and your <b>CV/resume</b>.<br /><br />
+     Goto "View & Edit Details" and finish your details, here in zip file upload all your reference documents like achievements certificates and your <b>CV/resume</b>.<br /><br />
             Then goto "Select intrested companies" and select interested one.<br /><br />
             Then goto "Written test" when company starts written test and give test.<br /><br />
             Then goto "View result" and view your result for personal interview.<br /><br />
