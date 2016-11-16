@@ -31,13 +31,13 @@ namespace placement_management_system.company
                 SqlDataReader reader = c.ExecuteReader();
                 reader.Read();
 
-                MailMessage o = new MailMessage("snk.bhimani.jnd@gmail.com", reader["email"].ToString(), "Your password for placement management system", "Respected sir/mam,<br><p>Your password is: " + reader["password"].ToString() + "</p><br>from placement management system");
+                //MailMessage o = new MailMessage("snk.bhimani.jnd@gmail.com", reader["email"].ToString(), "Your password for placement management system", "Respected sir/mam,<br><p>Your password is: " + reader["password"].ToString() + "</p><br>from placement management system");
                 o.IsBodyHtml = true;
                 NetworkCredential netCred = new NetworkCredential("snk.bhimani.jnd@gmail.com", "SNK.bhimani3");
                 SmtpClient smtpobj = new SmtpClient("smtp.gmail.com", 587);
                 smtpobj.EnableSsl = true;
                 smtpobj.Credentials = netCred;
-                smtpobj.Send(o);
+                //smtpobj.Send(o);
                 con.Close();
                 alert.InnerHtml = "<script>alert('Your password has been sent to your email address');</script>";
             }

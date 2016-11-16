@@ -80,7 +80,7 @@
                  <div class="row">
                         <div class="input-field col s12">
                             <asp:TextBox ID="collage_id" name="collage_id" class="validate" runat="server"></asp:TextBox>
-                            <label for="fname">Collage ID</label>
+                            <label for="fname">College ID</label>
                         </div>
 
                     </div>
