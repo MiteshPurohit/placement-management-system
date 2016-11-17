@@ -69,7 +69,7 @@ namespace placement_management_system.student
             con.Open();
             SqlCommand c = new SqlCommand();
             c.Connection = con;
-            c.CommandText = "SELECT * from company_table where company_id = '" + Session["student_id"].ToString() + "'";
+            c.CommandText = "SELECT * from company_table where company_id = '" + Session["company_id"].ToString() + "'";
             SqlDataReader r = c.ExecuteReader();
             r.Read();
             questions_div.Visible = true;
