@@ -19,7 +19,8 @@ namespace placement_management_system.student
             }
             string id = Request.QueryString["id"];
             SqlConnection con = new SqlConnection();
-            con.ConnectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename='C:\Users\Sanket Bhimani\Source\Repos\placement-management-system\placement_management_system\placement_management_system\db\pmsdb.mdf';Integrated Security=True;MultipleActiveResultSets=True;Connect Timeout=30";
+            con.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["pmsdbConnectionString"].ConnectionString;
+
             con.Open();
             SqlCommand c = new SqlCommand();
             c.Connection = con;

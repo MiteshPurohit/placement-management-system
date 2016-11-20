@@ -18,7 +18,8 @@ namespace placement_management_system.company
                 Response.Redirect("company_login.aspx", true);
             }
             SqlConnection con = new SqlConnection();
-            con.ConnectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename='C:\Users\Sanket Bhimani\Source\Repos\placement-management-system\placement_management_system\placement_management_system\db\pmsdb.mdf';Integrated Security=True;Connect Timeout=30";
+            con.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["pmsdbConnectionString"].ConnectionString;
+
             con.Open();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
@@ -35,7 +36,8 @@ namespace placement_management_system.company
             try
             {
                 SqlConnection con = new SqlConnection();
-                con.ConnectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename='C:\Users\Sanket Bhimani\Source\Repos\placement-management-system\placement_management_system\placement_management_system\db\pmsdb.mdf';Integrated Security=True;Connect Timeout=30";
+                con.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["pmsdbConnectionString"].ConnectionString;
+
                 con.Open();
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = con;
